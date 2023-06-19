@@ -1,0 +1,281 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://unpkg.com/tailwindcss/dist/base.css
+ */
+@tailwind base;
+
+/**
+ * Remove the default box-shadow for invalid elements to prevent
+ * inputs in Livewire components showing with a
+ * red border by default in Firefox.
+ *
+ * See: https://github.com/laravel-frontend-presets/tall/issues/7
+ */
+ input:invalid, textarea:invalid, select:invalid {
+    box-shadow: none;
+}
+
+/**
+ * This injects any component classes registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ */
+
+@font-face {
+    font-family: "mitr";
+    src: url("/resources/assets/font/mitr-extralight.woff2") format('woff2'),
+        url("/resources/assets/font/mitr-extralight.woff") format('woff'),
+        url("/resources/assets/font/mitr-extralight.ttf") format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "mitr";
+    src: url("/resources/assets/font/mitr-light.woff2") format('woff2'),
+        url("/resources/assets/font/mitr-light.woff") format('woff'),
+        url("/resources/assets/font/mitr-light.ttf") format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "mitr";
+    src: url("/resources/assets/font/mitr-regular.woff2") format('woff2'),
+        url("/resources/assets/font/mitr-regular.woff") format('woff'),
+        url("/resources/assets/font/mitr-regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "mitr";
+    src: url("/resources/assets/font/mitr-medium.woff2") format('woff2'),
+        url("/resources/assets/font/mitr-medium.woff") format('woff'),
+        url("/resources/assets/font/mitr-medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "mitr";
+    src: url("/resources/assets/font/mitr-semibold.woff2") format('woff2'),
+        url("/resources/assets/font/mitr-semibold.woff") format('woff'),
+        url("/resources/assets/font/mitr-semibold.ttf") format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "mitr";
+    src: url("/resources/assets/font/mitr-bold.woff2") format('woff2'),
+        url("/resources/assets/font/mitr-bold.woff") format('woff'),
+        url("/resources/assets/font/mitr-bold.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+[x-cloak] {
+    display: none;
+}
+
+
+.checkbox,.radio{
+    @apply p-2;
+    *{
+        @apply transition-all;
+    }
+    label{
+        @apply border-transparent overflow-clip;
+
+        div>div:first-child,[type="checkbox"],[type="radio"]{
+            @apply hidden;
+            background-color: green;
+        }
+        div{
+            @apply w-full text-center m-0;
+        }
+        label{
+            @apply border-0 w-full p-2 ;
+        }
+        &:has(input[type="checkbox"]:checked),
+        &:has(input[type="radio"]:checked){
+            color: white;
+
+        }
+    }
+}
+
+.animate{
+    @apply transition-all duration-500 delay-300;
+}
+.out{
+    @apply opacity-0 translate-y-10;
+
+    &.in{
+        @apply opacity-100 translate-y-0;
+    }
+}
+.page{
+    @apply w-full min-h-screen  flex flex-col;
+    @apply bg-cover bg-no-repeat;
+
+    .main{
+        @apply w-full mt-6 mx-auto max-w-sm bg-white/50;
+    }
+    footer{
+        @apply w-full mt-auto mb-11 px-8 mx-auto max-w-sm bg-white/50;
+    }
+
+    &.page-0{
+        @apply bg-[url('/resources/assets/images/bg_0.svg')];
+    }
+    &.page-1{
+        @apply bg-[url('/resources/assets/images/bg_1.svg')];
+    }
+    &.page-2{
+        @apply bg-[url('/resources/assets/images/bg_2.svg')];
+    }
+    &.page-3{
+        @apply bg-[url('/resources/assets/images/bg_3.svg')];
+    }
+}
+.bubble{
+    @apply bg-white p-2 mx-20 relative mb-16 w-max max-w-[80%] text-3xl;
+    border-image: url("/resources/assets/images/bubble_qa.svg");
+    border-image-width: 20px;
+    border-image-repeat: stretch;
+    border-image-outset: 9px;
+    border-image-slice: 30% 30%;
+
+    .time{
+        @apply absolute bottom-0 translate-y-[40px] left-0;
+    }
+
+    &.left{
+        margin-left: 2rem;
+
+        &::before{
+            @apply absolute -bottom-2 -left-6 block w-6 h-6 bg-no-repeat;
+            background-image: url("/resources/assets/images/pop_L.svg");
+            content: "";
+        }
+    }
+
+    &.right{
+        margin-left: auto;
+        margin-right: 2rem;
+        &::after{
+            @apply absolute -bottom-2 right-[-1.45rem] block w-6 h-6 bg-no-repeat;
+            background-image: url("/resources/assets/images/pop_R.svg");
+            content: "";
+        }
+        .time{
+            @apply right-0 left-auto
+        }
+    }
+
+    &.center{
+        @apply mb-12 my-4 mx-auto px-4 p-2 text-3xl text-center;
+        border-image: url("/resources/assets/images/bubble_Square.svg");
+        border-image-width: 20px;
+        border-image-repeat: stretch;
+        border-image-outset: 10px;
+        border-image-slice: 20% 10%;
+
+        &::after{
+            @apply absolute bottom-[-27px] right-4 block w-6 h-6 bg-no-repeat;
+            background-image: url("/resources/assets/images/pop_C.svg");
+            content: "";
+        }
+    }
+
+    &.border{
+        @apply block bg-transparent relative my-4 mx-auto w-max px-4 p-2 text-base;
+        border-image: url("/resources/assets/images/border_bubble.svg");
+        border-image-width: 20px;
+        border-image-repeat: stretch;
+        border-image-outset: 6px;
+        border-image-slice: 30% 15%;
+    }
+
+}
+
+.btn{
+    &-go{
+        @apply bg-[url('/resources/assets/images/btn_go.svg')] bg-no-repeat border-transparent bg-center w-24 aspect-square;
+        @apply text-2xl font-bold;
+        @apply drop-shadow-none;
+        @apply transition-all duration-500 ease-out;
+        &:hover{
+            @apply scale-110 drop-shadow-md
+        }
+
+    }
+    &-tab{
+        @apply bg-[url('/resources/assets/images/btn_tab.svg')] bg-no-repeat border-transparent bg-center w-24 aspect-square;
+        @apply text-2xl font-bold;
+        @apply drop-shadow-none;
+        @apply transition-all duration-500 ease-out;
+        &:hover{
+            @apply scale-110 drop-shadow-md
+        }
+
+    }
+    &-invisible{
+        label{
+            @apply absolute inset-0 w-full h-full rounded-full;
+            @apply bg-yellow-300 opacity-10 border-2 border-yellow-600 animate-pulse duration-1000;
+        }
+        &:has(:checked){
+            label{
+                @apply bg-green-500 opacity-75 animate-none;
+            }
+        }
+    }
+    &-ans{
+        @apply bg-[url('/resources/assets/images/btn_ans.svg')] bg-no-repeat border-transparent bg-center bg-contain w-4/5 mx-auto my-2;
+        label{
+            @apply text-xl;
+        }
+        @apply drop-shadow-none;
+        @apply transition-all duration-500 ease-out;
+        &:has(:checked){
+            @apply bg-[url('/resources/assets/images/btn_ans_active.svg')];
+            @apply scale-110 drop-shadow-md;
+            label{
+                @apply text-gray-600;
+            }
+        }
+        &:hover{
+            @apply scale-110 drop-shadow-md
+        }
+    }
+}
