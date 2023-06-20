@@ -2,8 +2,11 @@
 md:h-screen flex md:flex-col flex-wrap gap-2 pb-6 text-white shadow-[0_0_0.5rem_.25rem_rgba(0,0,0,0.3)]">
     <h2 class="text-center text-2xl font-medium my-6">Dashboard</h2>
 
-    <x-admin-sidebar-button label="Overview" icon="home" href="{{ route('overview') }}" active="1" />
-    <x-admin-sidebar-button label="Users" icon="user" href="{{ route('users') }}" active="0" />
+    <x-admin-sidebar-button label="Overview" icon="home"
+    href="{{ route('overview') }}" active="{{ url()->current() == route('overview')?1:0 }}" />
+
+    <x-admin-sidebar-button label="Users" icon="user"
+    href="{{ route('users') }}" active="{{ url()->current() == route('users')?1:0 }}" />
 
 
     <div class="flex justify-center">
