@@ -2,6 +2,6 @@
     <livewire:admin.sidebar />
 
     <div>
-    <livewire:admin.view.users />
+    <livewire:admin.view.user />
     </div>
 </div>

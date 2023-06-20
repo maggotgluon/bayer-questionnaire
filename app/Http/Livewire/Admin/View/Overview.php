@@ -2,6 +2,10 @@
 
 namespace App\Http\Livewire\Admin\View;
 
+use App\Models\Question;
+use Asantibanez\LivewireCharts\Facades\LivewireCharts;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class Overview extends Component
@@ -22,7 +26,8 @@ class Overview extends Component
                 //return Carbon::parse($date->created_at)->format('m'); // grouping by months
             // });
         // dd($activeUser,$from,$to);
-        $data['count']=$dataset->count();
+        $data['count']=$dataset->count()??0;
+
         $data['age']['9']= $dataset->where('ages','<',10)->count();
         $data['age']['10-20']= $dataset->whereBetween('ages',[10,20])->count();
         $data['age']['21-30']= $dataset->whereBetween('ages',[21,30])->count();

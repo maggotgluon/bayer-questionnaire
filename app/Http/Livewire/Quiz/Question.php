@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Question extends Component
 {
-    public $step='result';
+    public $step=0;
     public $sub=1;
     public $data=[];
     public $data1=[];
