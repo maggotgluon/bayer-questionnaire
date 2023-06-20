@@ -10,6 +10,8 @@ use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 
 use App\Http\Livewire\Admin\Dashboard as admin_dashboard;
+use App\Http\Livewire\Admin\Overview as admin_overview;
+use App\Http\Livewire\Admin\Users as admin_users;
 use App\Http\Livewire\Quiz\Question as client_quiz;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +46,8 @@ Route::get('password/reset/{token}', Reset::class)
 Route::middleware('auth')->group(function () {
     // Route::view('/', 'welcome')->name('home');
     Route::get('/dash', admin_dashboard::class)->name('dashboard');
+    Route::get('/admin/overview', admin_overview::class)->name('overview');
+    Route::get('/admin/users', admin_users::class)->name('users');
     Route::get('email/verify', Verify::class)
         ->middleware('throttle:6,1')
         ->name('verification.notice');
