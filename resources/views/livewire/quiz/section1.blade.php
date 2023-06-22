@@ -24,11 +24,11 @@
                     <x-chat-bubble text="สวัสดี..." time=true size="lg" direction="left" />
                     @endif
                     @if ($sub>=2)
-                <x-chat-bubble text="อายุเท่าไหร่?" time=true size="lg" direction="left" type="number" min=0 max=99 />
+                <x-chat-bubble text="อายุเท่าไหร่?" time=true size="lg" direction="left"  />
                 @endif
                 @if ($sub>=3)
                 <x-chat-bubble time=true size="lg" direction="right" >
-                    <x-input label="Age" placeholder="your name" wire:model="data.age" autofocus require />
+                    <x-input label="Age" placeholder="กรอกอายุ" wire:model="data.age" autofocus require type="number" min=0 max=99/>
                 </x-chat-bubble>
                 @endif
 
