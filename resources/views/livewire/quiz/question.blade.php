@@ -11,6 +11,7 @@
         @endisset
     </div>
     <div class="w-full bg-pink-300 relative">
+
         @switch($step)
         @case(0)
         <livewire:quiz.section1/>
@@ -25,8 +26,14 @@
         <livewire:quiz.section.part3/>
         @break
         @case('result')
+            @isset($result)
+            <livewire:quiz.result
+                :path='$result->type'
+                :result='$result->result'
+                :age='$result->ages' />
 
-        <livewire:quiz.result :path='2' result='1' :age='2' />
+
+            @endisset
         @break
 
         @default

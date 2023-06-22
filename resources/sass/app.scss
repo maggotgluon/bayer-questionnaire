@@ -148,10 +148,10 @@
     @apply bg-cover bg-no-repeat;
 
     .main{
-        @apply w-full mt-6 mx-auto max-w-sm bg-white/50;
+        @apply w-full mt-6 mx-auto max-w-sm;
     }
     footer{
-        @apply w-full mt-auto mb-11 px-8 mx-auto max-w-sm bg-white/50;
+        @apply w-full mt-auto mb-11 px-8 mx-auto max-w-sm;
     }
 
     &.page-0{

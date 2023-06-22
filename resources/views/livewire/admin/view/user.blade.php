@@ -46,41 +46,57 @@
         {{ $question->user }}
         <div class="grid md:grid-cols-5 gap-4 py-4">
              <!-- $question->answers['section1']['radio']  -->
-            <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]"> checkbox </div>
             <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
-            <h5 class="font-medium">{{ $question->answers['section_part']['question-1'] }}</h5>
-                <ul>
-                @foreach ($question->answers['section_part']['answer-1'] as $ans)
-                    <li>{{ $ans }}</li>
-                @endforeach
-                </ul>
+                @isset($question->answers['section1']['select'])
+                    <h5 class="font-medium">เธอรู้สึกกังวลเกี่ยวกับ “การเป็นประจําเดือน” เรื่องไหนบ้าง</h5>
+                    <ul>
+                    @foreach ($question->answers['section1']['select'] as $ans)
+                        <li>{{ $ans }}</li>
+                    @endforeach
+                    </ul>
+                @endisset
+            </div>
+
+            <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
+                @isset($question->answers['section_part']['question-1'])
+                    <h5 class="font-medium">{{ $question->answers['section_part']['question-1'] }}</h5>
+                    <ul>
+                    @foreach ($question->answers['section_part']['answer-1'] as $ans)
+                        <li>{{ $ans }}</li>
+                    @endforeach
+                    </ul>
+                @endisset
 
             </div>
             <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
-            <h5 class="font-medium">{{ $question->answers['section_part']['question-2'] }}</h5>
-                <ul>
-                @foreach ($question->answers['section_part']['answer-2'] as $ans)
-                    <li>{{ $ans }}</li>
-                @endforeach
-                </ul>
-             </div>
-            <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
-                @isset($question->answers['section_part']['answer-3'])
-                <h5 class="font-medium">{{ $question->answers['section_part']['question-3'] }}</h5>
-                <ul>
-                @foreach ($question->answers['section_part']['answer-3'] as $ans)
-                    <li>{{ $ans }}</li>
-                @endforeach
-                </ul>
+                @isset($question->answers['section_part']['question-2'])
+                    <h5 class="font-medium">{{ $question->answers['section_part']['question-2'] }}</h5>
+                    <ul>
+                    @foreach ($question->answers['section_part']['answer-2'] as $ans)
+                        <li>{{ $ans }}</li>
+                    @endforeach
+                    </ul>
                 @endisset
              </div>
             <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
-            <h5 class="font-medium">{{ $question->answers['section_part']['question-4'] }}</h5>
-                <ul>
-                @foreach ($question->answers['section_part']['answer-4'] as $ans)
-                    <li>{{ $ans }}</li>
-                @endforeach
-                </ul>
+                @isset($question->answers['section_part']['answer-3'])
+                    <h5 class="font-medium">{{ $question->answers['section_part']['question-3'] }}</h5>
+                    <ul>
+                    @foreach ($question->answers['section_part']['answer-3'] as $ans)
+                        <li>{{ $ans }}</li>
+                    @endforeach
+                    </ul>
+                @endisset
+             </div>
+            <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
+                @isset($question->answers['section_part']['question-4'])
+                    <h5 class="font-medium">{{ $question->answers['section_part']['question-4'] }}</h5>
+                    <ul>
+                    @foreach ($question->answers['section_part']['answer-4'] as $ans)
+                        <li>{{ $ans }}</li>
+                    @endforeach
+                    </ul>
+                @endisset
              </div>
         </div>
     </div>

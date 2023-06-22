@@ -11,7 +11,7 @@ class User extends Component
     use WithPagination;
     public function render()
     {
-        $qa = Question::paginate(10);
+        $qa = Question::orderBy('created_at','desc')->paginate(10);
         return view('livewire.admin.view.user',[
             'questions'=>$qa
         ]);

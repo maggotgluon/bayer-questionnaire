@@ -13,22 +13,25 @@ class Question extends Component
     public $data1=[];
     public $now=[];
 
+    public $result;
+
 
     protected $listeners = ['data'];
 
     public function data($data){
         $section_name ='section'.$data['key'];
         $this->data[$section_name] = $data['section'];
-        // $this->step++;
-        $this->step=$this->data['section1']['radio'];
+
+        $this->step=$this->data['section1']['path'];
+        // dd($this->data);
         if(isset($this->data['section_part']['score'])){
             // dd($this->data,$this->step);
-            $m = ModelsQuestion::create([
+            $this->result = ModelsQuestion::create([
                 'user'=>request()->ip(),
                 'ages'=>$this->data['section1']['age'],
                 'answers'=>$this->data,
                 'result'=>$this->data['section_part']['result'],
-                'type'=>$this->data['section1']['radio'],
+                'type'=>$this->data['section1']['path'],
                 'score'=>$this->data['section_part']['score'],
             ]);
             // dd($m);

@@ -8,7 +8,9 @@
         <img src="{{ asset('images/img_2-1.svg') }}" class="max-w-[80%] m-auto" />
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -46,7 +48,9 @@
         </div>
         <!-- <div class="checkbox btn-ans"><x-checkbox id="q-1-6" lg wire:model="data.checkbox_1-2.6" value="6" label="" /> </div> -->
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -67,7 +71,9 @@
         <div class="checkbox btn-ans"><x-checkbox id="q-2-3" lg wire:model="data.q-2.3" value="3" label="สิวตุ่มหนอง" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-4" lg wire:model="data.q-2.4" value="4" label="สิวหัวช้าง" /> </div>
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -84,7 +90,9 @@
         <div class="radio btn-ans"><x-radio id="q-3-2" lg wire:model="data.q-3" value="2" label="สิวเปลียนทีขึนไม่ซํา จําโซนไม่ได้" /></div>
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -99,7 +107,9 @@
         </div>
         <img src="{{ asset('images/img_2-3.svg') }}" class="max-w-[80%] m-auto" />
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -118,7 +128,9 @@
         <div class="radio btn-ans"><x-radio id="q-4-2" lg wire:model="data.q-4" value="2" label="ไม่แน่ใจ" /></div>
         <div class="radio btn-ans"><x-radio id="q-4-3" lg wire:model="data.q-4" value="3" label="ไม่รู้จัก" /></div>
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -177,7 +189,9 @@
             ทีมา : <a href="https://bit.ly/4347XZk">https://bit.ly/4347XZk</a>
         </aside>
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -200,7 +214,8 @@
         <img src="{{ asset('images/img_2-4.svg') }}" class="max-w-[80%] m-auto" />
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="updateScore" />
+        <button class="btn-tab"  wire:click="updateScore" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 

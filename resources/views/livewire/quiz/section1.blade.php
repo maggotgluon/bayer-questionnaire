@@ -9,7 +9,8 @@
                 <img src="{{ asset('images/img_0-2.svg') }}" class="max-w-[80%] m-auto" />
 
                 <x-slot:footer>
-                    <x-button class="btn-tab" wire:click="page(1)" />
+                    <button class="btn-tab" wire:click="page(1)" />
+
                 </x-slot:footer>
             </x-quiz-page>
             @break
@@ -19,7 +20,7 @@
                 <div class="mb-8 mt-4 text-center">
                     <x-timestamp date=true time=false />
                 </div>
-                <div wire:poll="sub" class="{{$sub==3?'invisible':''}}"></div>
+                <div wire:poll.10ms="sub" class="{{$sub==3?'invisible':''}}"></div>
                     @if ($sub>=1)
                     <x-chat-bubble text="สวัสดี..." time=true size="lg" direction="left" />
                     @endif
@@ -42,7 +43,9 @@
                 @if ($sub>=5)
                 <x-slot:footer>
                     @isset ($data['age'])
-                    <x-button label="GO!" class="btn-go" wire:click="page(2)" />
+                    <button class="btn-go"  wire:click="page(2)" >
+                    GO!
+                    </button>
                     @endisset
                 </x-slot:footer>
                 @endif
@@ -55,11 +58,13 @@
                             เธอรู้สึกกังวลเกี่ยวกับ “การเป็นประจําเดือน” เรื่องไหนบ้าง
                         </div>
                         <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
-                        <div class="checkbox btn-ans"><x-checkbox id="lg-1" lg wire:model="data.checkbox.1" value="1" label="ปวดท้อง เวียนหัว ตึงเต้า อารมณ์แปรปรวน" /></div>
-                        <div class="checkbox btn-ans"><x-checkbox id="lg-2" lg wire:model="data.checkbox.2" value="2" label="สิวสาวเห่อแดง แสลงใจทุกครั้ง ที่เป็นสิว" /></div>
-                        <div class="checkbox btn-ans"><x-checkbox id="lg-3" lg wire:model="data.checkbox.3" value="3" label="ประจําเดือนที่ไม่มาประจํา ทําใจลุ้นทุกเดือน" /></div>
+                        <div class="checkbox btn-ans"><x-checkbox id="lg-1" lg wire:model="data.check.1" value="1" label="ปวดท้อง เวียนหัว ตึงเต้า อารมณ์แปรปรวน" /></div>
+                        <div class="checkbox btn-ans"><x-checkbox id="lg-2" lg wire:model="data.check.2" value="2" label="สิวสาวเห่อแดง แสลงใจทุกครั้ง ที่เป็นสิว" /></div>
+                        <div class="checkbox btn-ans"><x-checkbox id="lg-3" lg wire:model="data.check.3" value="3" label="ประจําเดือนที่ไม่มาประจํา ทําใจลุ้นทุกเดือน" /></div>
                 <x-slot:footer>
-                    <x-button label="GO!" class="btn-go" wire:click="page(3)" />
+                    <button class="btn-go"  wire:click="page(3)" >
+                    GO!
+                    </button>
                 </x-slot:footer>
             </x-quiz-page>
             @break
@@ -71,17 +76,19 @@
                         </div>
 
                         <span class="bubble border">ตอบได้เพียง 1 ข้อ</span>
-                        @isset($data['checkbox'][1])
-                        <div class="radio btn-ans"><x-radio id="radio-1" name="radio" wire:model="data.radio" lg value="1" label="ปวดท้อง เวียนหัว ตึงเต้า อารมณ์แปรปรวน" /></div>
+                        @isset($data['check'][1])
+                        <div class="radio btn-ans"><x-radio id="radio-1" name="radio" wire:model="data.path" lg value="1" label="ปวดท้อง เวียนหัว ตึงเต้า อารมณ์แปรปรวน" /></div>
                         @endisset
-                        @isset($data['checkbox'][2])
-                        <div class="radio btn-ans"><x-radio id="radio-2" name="radio" wire:model="data.radio" lg value="2" label="สิวสาวเห่อแดง แสลงใจทุกครั้ง ที่เป็นสิว" /></div>
+                        @isset($data['check'][2])
+                        <div class="radio btn-ans"><x-radio id="radio-2" name="radio" wire:model="data.path" lg value="2" label="สิวสาวเห่อแดง แสลงใจทุกครั้ง ที่เป็นสิว" /></div>
                         @endisset
-                        @isset($data['checkbox'][3])
-                        <div class="radio btn-ans"><x-radio id="radio-3" name="radio" wire:model="data.radio" lg value="3" label="ประจําเดือนที่ไม่มาประจํา ทําใจลุ้นทุกเดือน" /></div>
+                        @isset($data['check'][3])
+                        <div class="radio btn-ans"><x-radio id="radio-3" name="radio" wire:model="data.path" lg value="3" label="ประจําเดือนที่ไม่มาประจํา ทําใจลุ้นทุกเดือน" /></div>
                         @endisset
                 <x-slot:footer>
-                    <x-button label="GO!" class="btn-go" wire:click="emitData" />
+                    <button class="btn-go"  wire:click="emitData" >
+                    GO!
+                    </button>
                 </x-slot:footer>
             </x-quiz-page>
             @break

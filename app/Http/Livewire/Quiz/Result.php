@@ -75,6 +75,7 @@ class Result extends Component
 
         $this->title=$content[$this->path][$this->result]['title'];
         $this->content=$content[$this->path][$this->result]['content'];
+        $this->images='images/result_img_'.$this->path.'-'.$this->result.'.png';
         $this->image_face = 'images/result_'.$this->result.'.png';
     }
 

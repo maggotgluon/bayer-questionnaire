@@ -10,7 +10,9 @@
         <img src="{{ asset('images/img_3-1.svg') }}" class="max-w-[80%] m-auto" />
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -34,7 +36,9 @@
         <div class="radio btn-ans"><x-radio id="q-1-3" lg wire:model="data.q-1" value="3" label="ประจําเดือนยังมาปกติดี" /></div>
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -57,7 +61,9 @@
         <div class="checkbox btn-ans"><x-checkbox id="q-2-5" lg wire:model="data.q-2.5" value="5" label="ไม่มีอาการเปนลาภอันประเสริฐ" /> </div>
         <!-- <div class="checkbox btn-ans"><x-checkbox id="q-2-6" lg wire:model="data.checkbox_1-2.6" value="6" label="" /> </div> -->
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -76,7 +82,9 @@
         </div>
         <img src="{{ asset('images/img_3-2.svg') }}" class="max-w-[80%] m-auto" />
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -96,7 +104,9 @@
         <div class="radio btn-ans"><x-radio id="q-4-2" lg wire:model="data.q-4" value="2" label="ไม่แน่ใจ" /></div>
         <div class="radio btn-ans"><x-radio id="q-4-3" lg wire:model="data.q-4" value="3" label="ไม่รู้จัก" /></div>
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -145,7 +155,9 @@
             ทีมา : <a href="https://bit.ly/3Wyxzet">https://bit.ly/3Wyxzet</a>
         </aside>
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -170,7 +182,10 @@
         <img src="{{ asset('images/img_3-3.svg') }}" class="max-w-[80%] m-auto" />
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="updateScore" />
+
+        <button class="btn-tab"  wire:click="updateScore" >
+            </button>
+
         </x-slot:footer>
     </x-quiz-page>
 

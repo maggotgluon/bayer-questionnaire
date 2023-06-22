@@ -22,7 +22,9 @@
             <img src="{{ asset('images/img_1-1.svg') }}" class="max-w-[80%] m-auto" />
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
             @break
@@ -40,7 +42,8 @@
             <div class="radio btn-ans"><x-radio id="q1-1-3" lg wire:model="data.q-1" value="3" label="อา..รมณ์เสีย อารมณ์เสียยยยย อารมณ์เสียยยยยย !" /></div>
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+            <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
             @break
@@ -62,7 +65,8 @@
             <div class="checkbox btn-ans"><x-checkbox id="q1-2-5" lg wire:model="data.q-2.5" value="5" label="ร่างกายปกติทีแสนพิเศษ" /> </div>
             <!-- <div class="checkbox btn-ans"><x-checkbox id="q1-2-6" lg wire:model="data.checkbox_1-2.6" value="6" label="" /> </div> -->
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+            <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
             @break
@@ -85,7 +89,8 @@
             </x-chat-bubble>
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
             @break
@@ -101,7 +106,8 @@
             </div>
             <img src="{{ asset('images/img_1-2.svg') }}" class="max-w-[80%] m-auto" />
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -118,7 +124,8 @@
             <div class="radio btn-ans"><x-radio id="q1-3-2" lg wire:model="data.q-4" value="2" label="ไม่แน่ใจ" /></div>
             <div class="radio btn-ans"><x-radio id="q1-3-3" lg wire:model="data.q-4" value="3" label="ไม่รู้จัก" /></div>
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -166,7 +173,9 @@
             </div>
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="page" />
+
+        <button class="btn-tab"  wire:click="page" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
@@ -189,7 +198,8 @@
             <img src="{{ asset('images/img_1-3.svg') }}" class="max-w-[80%] m-auto" />
 
         <x-slot:footer>
-            <x-button class="btn-tab" wire:click="updateScore" />
+        <button class="btn-tab"  wire:click="updateScore" >
+            </button>
         </x-slot:footer>
     </x-quiz-page>
 
