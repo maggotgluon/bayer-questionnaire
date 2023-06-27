@@ -19,7 +19,7 @@ md:h-screen flex md:flex-col flex-wrap gap-2 pb-6 text-white shadow-[0_0_0.5rem_
     </div>
 
     <div class="flex justify-start pl-8">
-        <x-button flat label="Logout" icon="logout" />
+        <x-button flat label="Logout" icon="logout" :href="route('out')"/>
     </div>
 
 </div>

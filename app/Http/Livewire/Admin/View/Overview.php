@@ -102,7 +102,7 @@ class Overview extends Component
         ->setTitle('Daly Active User');
         // 30 Day back
         $today = Carbon::now();
-        $day = $today->subDays(7);
+        $day = $today->subDays(6);
         // dd($activeUser->count());
         for ($i=0; $i < 7; $i++) {
             // $today->subDay();

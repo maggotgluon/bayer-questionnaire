@@ -31,6 +31,7 @@ class Login extends Component
 
             return;
         }
+        return redirect()->intended(route('overview'));
 
         return redirect()->intended(route('home'));
     }

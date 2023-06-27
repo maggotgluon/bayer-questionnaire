@@ -43,7 +43,7 @@
             <span class="rounded-full {{ $section_color }} w-full h-4 aspect-square inline-block"></span>
             <span class="text-gray-700">{{ $question->updated_at }}</span>
         </div>
-        {{ $question->user }}
+         {{-- $question->user }} --}}
         <div class="grid md:grid-cols-5 gap-4 py-4">
              <!-- $question->answers['section1']['radio']  -->
             <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
