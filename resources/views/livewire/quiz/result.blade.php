@@ -3,11 +3,12 @@
         <div class="bg-white rounded-3xl drop-shadow-[10px_10px_0_rgba(0,0,0,0.5)] p-8 mx-auto max-w-xs" id='content'>
             <h3 class="text-3xl text-center">{{ $title }}</h3>
 
-            <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player id="lottie" src="{{ asset('images/lottie/resultA_red.json') }}"
-            background="transparent" speed="1" class="w-[80%] h-auto m-auto" loop autoplay></lottie-player> -->
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+            <lottie-player id="lottie" src="{{ asset($lottie) }}"
+            background="transparent" speed="1" class="w-[80%] h-auto m-auto" loop autoplay></lottie-player>
             <img id="img" src="{{ asset($images) }}"
-            class="max-w-[80%] m-auto " />
+            class="max-w-[80%] m-auto hidden" />
 
 
             <div class="relative">
@@ -44,7 +45,7 @@
 
                 var a = document.createElement('a');
                 a.href = imgData;
-                a.download = 'test.png';
+                a.download = 'result.png';
                 document.body.appendChild(a);
                 a.click();
 

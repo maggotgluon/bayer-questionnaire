@@ -8,7 +8,7 @@ class Result extends Component
 {
     public $path,$result,$age;
 
-    public $title,$images,$content, $image_face;
+    public $title,$images,$content, $image_face,$lottie;
     public function mount(){
         $content['1']['1']['title']='สาวสมดุล';
         $content['1']['1']['content']='สาวสมดุล เพราะอาการก่อนมีประจําเดือน
@@ -76,6 +76,7 @@ class Result extends Component
         $this->title=$content[$this->path][$this->result]['title'];
         $this->content=$content[$this->path][$this->result]['content'];
         $this->images='images/result_img_'.$this->path.'-'.$this->result.'.png';
+        $this->lottie='images/lottie/result'.$this->path.'-'.$this->result.'.json';
         $this->image_face = 'images/result_'.$this->result.'.png';
     }
 

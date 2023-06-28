@@ -56,7 +56,7 @@
                 เธอมีความเปลี่ยนแปลง<br>
                 ทางร่างกายร่วมด้วยไหม
             </div>
-            <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+            <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
 
             <div class="checkbox btn-ans"><x-checkbox id="q1-2-1" lg wire:model="data.q-2.1" value="1" label="นอนไม่หลับ ร่างกายกระสับกระส่าย" /> </div>
             <div class="checkbox btn-ans"><x-checkbox id="q1-2-2" lg wire:model="data.q-2.2" value="2" label="ตัวบวม หน้าบวม รวมๆแล้วเซ็ง" /> </div>
@@ -136,7 +136,7 @@
         <!--  $page==6?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none' }} "> -->
             <div class="bubble left">
                 PMDD คืออะไร
-                <x-badge class="time absolute bottom-0" label="99-May-2023" />
+                <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
             </div>
 
             <div class="bubble left">
@@ -150,13 +150,13 @@
                     กับคนรอบข้าง และอาจทําให้เกิดปญหา
                     ทะเลาะใหญ่ได้
                 </P>
-                <x-badge class="time absolute bottom-0" label="99-May-2023" />
+                <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
             </div>
             <div class="bubble left">
                 <P class="text-base">
                     ระดับฮอร์โมนทีเปลี่ยนแปลง
                     จึงต้องปรับสมดุลให้อาการดีขึ้น</P>
-                <x-badge class="time absolute bottom-0" label="99-May-2023" />
+                <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
             </div>
             <div class="bubble left">
                 <P class="text-base">
@@ -169,7 +169,7 @@
                     เภสัช หรือผู้เชียวชาญเพื่อร่วมกันหา
                     ทางออกก่อนทีเธอจะไปดุดันใส่ใครโดยไม่
                     ได้ตงัใจน้า</P>
-                <x-badge class="time absolute bottom-0" label="99-May-2023" />
+                <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
             </div>
 
         <x-slot:footer>

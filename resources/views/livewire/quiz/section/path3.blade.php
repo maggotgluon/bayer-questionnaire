@@ -45,7 +45,7 @@
         <div class="text-3xl text-center my-4">
             {{$data['question-2']}}
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
 
         <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2.1" value="1" label="{{$raw['answer-2']['1']}}" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-2" lg wire:model="data.q-2.2" value="2" label="{{$raw['answer-2']['2']}}" /> </div>
@@ -101,7 +101,7 @@
     <x-quiz-page class="page-3  top-0 left-0 animate">
         <div class="bubble left">
             PCOS คืออะไร
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
 
         <div class="bubble left">
@@ -114,13 +114,13 @@
                 แต่มีอาการร่วมสําคัญคือ ผมร่วง ขนดก
                 สิวเห่อ หน้ามัน น้ำหนักเพิ่ม
             </P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
                 วิธีการรักษามีทั้งแบบไม่ใช้ยา
                 และแบบใช้ยา</P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
@@ -132,7 +132,7 @@
                 ทานยาปรับฮอร์โมน ชนิด EE35C เพื่อ
                 ปรับสมดุล และต้านฤทธิฮอร์โมนเพศชาย
                 โดยปรึกษาแพทย์หรือเภสัชกร</P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <aside class="float-right px-2 text-xs mb-4">
             ที่มา : <a href="https://bit.ly/3Wyxzet">https://bit.ly/3Wyxzet</a>

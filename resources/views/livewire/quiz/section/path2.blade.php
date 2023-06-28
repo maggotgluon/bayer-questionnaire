@@ -26,7 +26,7 @@
         <div class="text-3xl text-center my-4">
             {{$data['question-1']}}
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
         <x-errors />
 
         <span class="block h-[max(70vh,500px)]"></span>
@@ -67,7 +67,7 @@
         <div class="text-3xl text-center my-4">
             {{$data['question-2']}}
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
         <x-errors />
 
         <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2.1" value="1" 
@@ -147,8 +147,7 @@
     <x-quiz-page class="page-2  top-0 left-0 animate">
         <div class="bubble left">
             สิวฮอร์โมนคืออะไร
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
 
         <div class="bubble left">
@@ -168,15 +167,13 @@
                     </span>
                 </span>
             </P>
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
                 วิธีการรักษาสิวฮอร์โมนนั้นก็ทําได้
                 หลายวิธี</P>
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
@@ -192,8 +189,7 @@
                 เช่น ยาปรับฮอร์โมน EE30D ที่ช่วยปรับ
                 สมดุลฮอร์โมนให้เธอได้ โดยปรึกษาแพทย์
                 หรือเภสัชกร เพื่อร่วมกันหาทางออก</P>
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <aside class="float-right px-2 text-xs mb-4">
             ที่มา : <a href="https://bit.ly/4347XZk">https://bit.ly/4347XZk</a>

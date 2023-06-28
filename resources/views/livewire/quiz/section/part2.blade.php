@@ -22,7 +22,7 @@
         <div class="text-3xl text-center my-4">
             สิวขึ้นบริเวณไหนก่อนมีประจำเดือน
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
         <span class="block h-[max(70vh,500px)]"></span>
         <div class="absolute bottom-0 left-0 right-0 max-w-md mx-auto ">
             <div class="relative">
@@ -64,7 +64,7 @@
             สิวประเภทไหนทีขึ้นบน
             ใบหน้าก่อนมีประจําเดือน
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
 
         <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2.1" value="1" label="สิวอุดตันหัวดํา" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-2" lg wire:model="data.q-2.2" value="2" label="สิวอุดตันหัวขาว" /> </div>
@@ -141,7 +141,7 @@
         <!--  $page==6?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none' }} "> -->
         <div class="bubble left">
             สิวฮอร์โมนคืออะไร
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
 
         <div class="bubble left">
@@ -161,13 +161,13 @@
                     </span>
                 </span>
             </P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
                 วิธีการรักษาสิวฮอร์โมนนันก็ทําได้
                 หลายวิธี</P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
@@ -183,7 +183,7 @@
                 เช่น ยาปรับฮอร์โมน EE30D ทีช่วยปรับ
                 สมดุลฮอร์โมนให้เธอได้ โดยปรึกษาแพทย์
                 หรือเภสัชกร เพื่อร่วมกันหาทางออก</P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <aside class="float-right px-2 text-xs">
             ทีมา : <a href="https://bit.ly/4347XZk">https://bit.ly/4347XZk</a>

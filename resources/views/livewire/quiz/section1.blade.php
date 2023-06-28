@@ -57,7 +57,7 @@
                 <div class="text-3xl text-center my-4">
                             เธอรู้สึกกังวลเกี่ยวกับ “การเป็นประจําเดือน” เรื่องไหนบ้าง
                         </div>
-                        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+                        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
                         <div class="checkbox btn-ans"><x-checkbox id="lg-1" lg wire:model="data.check.1" value="1" label="ปวดท้อง เวียนหัว ตึงเต้า อารมณ์แปรปรวน" /></div>
                         <div class="checkbox btn-ans"><x-checkbox id="lg-2" lg wire:model="data.check.2" value="2" label="สิวสาวเห่อแดง แสลงใจทุกครั้ง ที่เป็นสิว" /></div>
                         <div class="checkbox btn-ans"><x-checkbox id="lg-3" lg wire:model="data.check.3" value="3" label="ประจําเดือนที่ไม่มาประจํา ทําใจลุ้นทุกเดือน" /></div>

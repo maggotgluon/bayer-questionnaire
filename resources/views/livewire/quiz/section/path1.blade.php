@@ -26,7 +26,7 @@
         <div class="text-3xl text-center my-4">
             {{$data['question-1']}}
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
         <div class="checkbox btn-ans"><x-checkbox id="q1-1-1" lg wire:model="data.q-1" value="1" 
             label="{{$raw['answer-1']['1']}}"  /></div>
         <div class="checkbox btn-ans"><x-checkbox id="q1-1-2" lg wire:model="data.q-1" value="2" 
@@ -48,7 +48,7 @@
         <div class="text-3xl text-center my-4">
             {{$data['question-2']}}
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
 
         <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2" value="1" 
             label="{{$raw['answer-2']['1']}}" /> </div>
@@ -137,8 +137,7 @@
         <!--  $page==6?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none' }} "> -->
         <div class="bubble left">
             PMDD คืออะไร
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
 
         <div class="bubble left">
@@ -152,15 +151,13 @@
                 กับคนรอบข้าง และอาจทําให้เกิดปัญหา
                 ทะเลาะใหญ่ได้
             </P>
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
                 ระดับฮอร์โมนที่เปลี่ยนแปลง
                 จึงต้องปรับสมดุลให้อาการดีขึ้น</P>
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
@@ -174,8 +171,7 @@
                 เภสัช หรือผู้เชี่ยวชาญเพื่อร่วมกันหา
                 ทางออกก่อนที่เธอจะไปดุดันใส่ใครโดยไม่
                 ได้ตังใจน้า</P>
-            <x-badge class="time absolute bottom-0" 
-            label="99-May-2023" />
+            <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
 
         <x-slot:footer>

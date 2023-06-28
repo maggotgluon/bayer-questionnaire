@@ -52,7 +52,7 @@
             นอกจากประจําเดือนขาด
             เธอมีอาการอืนร่วมไหม
         </div>
-        <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
+        <span class="bubble border whitespace-nowrap">ตอบได้มากกว่า 1 ข้อ</span>
 
         <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2.1" value="1" label="สิวเห่อ จนหน้าเธอเปลี่ยน" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-2" lg wire:model="data.q-2.2" value="2" label="หน้ามัน ทุกวัน จันทร์-อาทิตย์" /> </div>
@@ -118,7 +118,7 @@
         <!--  $page==6?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none' }} "> -->
         <div class="bubble left">
             PCOS คืออะไร
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
 
         <div class="bubble left">
@@ -131,13 +131,13 @@
                 แต่มีอาการร่วมสําคัญคือ ผมร่วง ขนดก
                 สิวเห่อ หน้ามัน นาํหนักเพิม
             </P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
                 วิธีการรักษามีทังแบบไม่ใช้ยา
                 และแบบใช้ยา</P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
@@ -149,7 +149,7 @@
                 ทานยาปรับฮอร์โมน ชนิด EE35C เพื่อ
                 ปรับสมดุล และต้านฤทธิฮอร์โมนเพศชาย
                 โดยปรึกษาแพทย์หรือเภสัชกร</P>
-            <x-badge class="time absolute bottom-0" label="99-May-2023" />
+            <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <aside class="float-right px-2 text-xs">
             ทีมา : <a href="https://bit.ly/3Wyxzet">https://bit.ly/3Wyxzet</a>

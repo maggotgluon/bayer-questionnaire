@@ -42,6 +42,7 @@ class Question extends Component
     }
     public function mount(){
         // dd(request()->ip(),\Request::getClientIp(true),$_SERVER,$GLOBALS);
+        // $this->step='result';
         $this->now['date']=now()->toDateString();
         $this->now['time']=now()->toTimeString();
 
