@@ -71,21 +71,21 @@
     "file": "assets/mitr-semibold-f0a2448b.woff2",
     "src": "resources/assets/font/mitr-semibold.woff2"
   },
-  "resources/assets/images/bg_0.svg": {
-    "file": "assets/bg_0-fe235316.svg",
-    "src": "resources/assets/images/bg_0.svg"
+  "resources/assets/images/bg-element.svg": {
+    "file": "assets/bg-element-c405e5a4.svg",
+    "src": "resources/assets/images/bg-element.svg"
   },
-  "resources/assets/images/bg_1.svg": {
-    "file": "assets/bg_1-6b8c07eb.svg",
-    "src": "resources/assets/images/bg_1.svg"
+  "resources/assets/images/bg-green.svg": {
+    "file": "assets/bg-green-2c826871.svg",
+    "src": "resources/assets/images/bg-green.svg"
   },
-  "resources/assets/images/bg_2.svg": {
-    "file": "assets/bg_2-495de9ca.svg",
-    "src": "resources/assets/images/bg_2.svg"
+  "resources/assets/images/bg-orange.svg": {
+    "file": "assets/bg-orange-a9c28f1c.svg",
+    "src": "resources/assets/images/bg-orange.svg"
   },
-  "resources/assets/images/bg_3.svg": {
-    "file": "assets/bg_3-7ed62a7f.svg",
-    "src": "resources/assets/images/bg_3.svg"
+  "resources/assets/images/bg-pink.svg": {
+    "file": "assets/bg-pink-d5b8567b.svg",
+    "src": "resources/assets/images/bg-pink.svg"
   },
   "resources/assets/images/border_bubble.svg": {
     "file": "assets/border_bubble-e4b7fd5a.svg",
@@ -96,7 +96,7 @@
     "src": "resources/assets/images/btn_ans.svg"
   },
   "resources/assets/images/btn_ans_active.svg": {
-    "file": "assets/btn_ans_active-e9b9af6d.svg",
+    "file": "assets/btn_ans_active-bd8ea712.svg",
     "src": "resources/assets/images/btn_ans_active.svg"
   },
   "resources/assets/images/btn_go.svg": {
@@ -111,6 +111,10 @@
     "file": "assets/bubble_Square-aa090298.svg",
     "src": "resources/assets/images/bubble_Square.svg"
   },
+  "resources/assets/images/bubble_qa-alt.svg": {
+    "file": "assets/bubble_qa-alt-e25fb8c6.svg",
+    "src": "resources/assets/images/bubble_qa-alt.svg"
+  },
   "resources/assets/images/bubble_qa.svg": {
     "file": "assets/bubble_qa-0d1a2050.svg",
     "src": "resources/assets/images/bubble_qa.svg"
@@ -123,6 +127,10 @@
     "file": "assets/pop_L-850964c7.svg",
     "src": "resources/assets/images/pop_L.svg"
   },
+  "resources/assets/images/pop_R-alt.svg": {
+    "file": "assets/pop_R-alt-82e28f2a.svg",
+    "src": "resources/assets/images/pop_R-alt.svg"
+  },
   "resources/assets/images/pop_R.svg": {
     "file": "assets/pop_R-fbb1cd7d.svg",
     "src": "resources/assets/images/pop_R.svg"
@@ -133,7 +141,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-adf819fc.css",
+    "file": "assets/app-cb8e7d2f.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
