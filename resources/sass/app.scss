@@ -155,16 +155,25 @@
     }
 
     &.page-0{
-        @apply bg-[url('/resources/assets/images/bg_0.svg')];
+        @apply bg-[url('/resources/assets/images/bg-element.svg'),url('/resources/assets/images/bg-green.svg')];
     }
     &.page-1{
-        @apply bg-[url('/resources/assets/images/bg_1.svg')];
+        @apply bg-[url('/resources/assets/images/bg-element.svg'),url('/resources/assets/images/bg-green.svg')];
     }
     &.page-2{
-        @apply bg-[url('/resources/assets/images/bg_2.svg')];
+        @apply bg-[url('/resources/assets/images/bg-element.svg'),url('/resources/assets/images/bg-orange.svg')];
     }
     &.page-3{
-        @apply bg-[url('/resources/assets/images/bg_3.svg')];
+        @apply bg-[url('/resources/assets/images/bg-element.svg'),url('/resources/assets/images/bg-pink.svg')];
+    }
+}
+.clear{
+    @apply w-32 text-xl bg-transparent;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    &::-webkit-inner-spin-button,&::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0; 
     }
 }
 .bubble{
@@ -175,6 +184,18 @@
     border-image-outset: 9px;
     border-image-slice: 30% 30%;
 
+    &.alternative{
+        @apply bg-[#febb08] p-2 mx-20 relative mb-16 w-max max-w-[80%] text-3xl;
+        border-image: url("/resources/assets/images/bubble_qa-alt.svg");
+        border-image-width: 20px;
+        border-image-repeat: stretch;
+        border-image-outset: 9px;
+        border-image-slice: 30% 30%;
+
+        &.right::after{
+            background-image: url("/resources/assets/images/pop_R-alt.svg");
+        }
+    }
     .time{
         @apply absolute bottom-0 translate-y-[40px] left-0;
     }

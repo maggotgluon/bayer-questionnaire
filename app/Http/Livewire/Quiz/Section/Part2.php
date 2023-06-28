@@ -8,7 +8,7 @@ use Spatie\Browsershot\Browsershot;
 
 class Part2 extends Component
 {
-    public $page=0;
+    public $page=1;
     public $data=[];
     public function mount(){
         $this->data['day']=0;

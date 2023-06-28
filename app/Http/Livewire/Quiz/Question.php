@@ -26,6 +26,7 @@ class Question extends Component
         // dd($this->data);
         if(isset($this->data['section_part']['score'])){
             // dd($this->data,$this->step);
+            $this->step='result';
             $this->result = ModelsQuestion::create([
                 'user'=>request()->ip(),
                 'ages'=>$this->data['section1']['age'],
@@ -35,7 +36,6 @@ class Question extends Component
                 'score'=>$this->data['section_part']['score'],
             ]);
             // dd($m);
-            $this->step='result';
             // dd($this->data,$this->step);
         }
 

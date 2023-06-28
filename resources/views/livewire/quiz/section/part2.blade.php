@@ -1,4 +1,4 @@
-<div>
+<div class="page-2">
 
     @switch($page)
     @case(0)
@@ -23,8 +23,8 @@
             สิวขึ้นบริเวณไหนก่อนมีประจำเดือน
         </div>
         <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
-        <span class="block h-[clamp(150px, 100vw, 500px)]"></span>
-        <div class="absolute bottom-0 left-0 right-0 max-w-md mx-auto">
+        <span class="block h-[max(70vh,500px)]"></span>
+        <div class="absolute bottom-0 left-0 right-0 max-w-md mx-auto ">
             <div class="relative">
                 <img src="{{ asset('images/img_2-2.svg') }}" class="max-w-full m-auto" />
                 <div class="absolute top-[5%] left-[15%] right-[35%]">
@@ -61,7 +61,7 @@
     <x-quiz-page class="page-2  top-0 left-0 animate">
 
         <div class="text-3xl text-center my-4">
-            สิวประเภทไหนทีขึนบน
+            สิวประเภทไหนทีขึ้นบน
             ใบหน้าก่อนมีประจําเดือน
         </div>
         <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
@@ -83,11 +83,11 @@
     <!-- radio -->
     <x-quiz-page class="page-2  top-0 left-0 animate">
         <div class="text-3xl text-center my-4">
-            สิวขึนซําบริเวณเดิมหรือ
+            สิวขึ้นซํ้าบริเวณเดิมหรือ
             ไม่ ก่อนมีประจําเดือน
         </div>
         <div class="radio btn-ans"><x-radio id="q-3-1" lg wire:model="data.q-3" value="1" label="ทีเดิม! สิวเก่าไม่ทันหาย สิวใหม่มาอีกละ" /></div>
-        <div class="radio btn-ans"><x-radio id="q-3-2" lg wire:model="data.q-3" value="2" label="สิวเปลียนทีขึนไม่ซํา จําโซนไม่ได้" /></div>
+        <div class="radio btn-ans"><x-radio id="q-3-2" lg wire:model="data.q-3" value="2" label="สิวเปลี่ยนทีขึ้นไม่ซํ้า จําโซนไม่ได้" /></div>
 
         <x-slot:footer>
 
@@ -146,11 +146,11 @@
 
         <div class="bubble left">
             <P class="text-base">
-                เปนสิวทีเกิดจากการเปลียนแปลงของ
-                ฮอร์โมน ซึงจะขึนซําๆ ทีเดิมบริเวณกราม
+                เป็นสิวทีเกิดจากการเปลี่ยนแปลงของ
+                ฮอร์โมน ซึ่งจะขึ้นซํ้าๆ ทีเดิมบริเวณกราม
                 และคาง จะสร้างความกังวลใจให้เธอใน
-                ทุก ๆ เดือน ซึงสิวฮอร์โมนส่วนใหญ่จะ
-                เปน สิวตุ่มหนอง สิวหัวช้าง
+                ทุก ๆ เดือน ซึ่งสิวฮอร์โมนส่วนใหญ่จะ
+                เป็น สิวตุ่มหนอง สิวหัวช้าง
                 <span class="grid grid-cols-2">
                     <span>
 
@@ -178,11 +178,11 @@
                 3. หลีกเลียงอาหารทีส่งผลกับสิวฮอร์โมน
                 เช่น ขนม เค้ก ข้าวขาว
                 แต่ถ้าสาเหตุของสิวฮอร์โมนเกิดจากการ
-                เปลียนแปลงของฮอร์โมน เราสามารถ
+                เปลี่ยนแปลงของฮอร์โมน เราสามารถ
                 ทานยาทีช่วยปรับฮอร์โมนให้สมดุลได้ด้วย
                 เช่น ยาปรับฮอร์โมน EE30D ทีช่วยปรับ
                 สมดุลฮอร์โมนให้เธอได้ โดยปรึกษาแพทย์
-                หรือเภสัชกร เพือร่วมกันหาทางออก</P>
+                หรือเภสัชกร เพื่อร่วมกันหาทางออก</P>
             <x-badge class="time absolute bottom-0" label="99-May-2023" />
         </div>
         <aside class="float-right px-2 text-xs">
@@ -201,8 +201,8 @@
     <x-quiz-page class="page-2  top-0 left-0 animate">
         <!--  $page==7?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none' }} "> -->
         <div class="bubble center">
-            เปลียนสิวเศร้า
-            เปนหน้าใส
+            เปลี่ยนสิวเศร้า
+            เป็นหน้าใส
         </div>
 
         <div class="bubble center">

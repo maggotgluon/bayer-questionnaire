@@ -24,12 +24,12 @@
     <x-quiz-page class="page-3  top-0 left-0 animate">
         <div class="text-3xl text-center my-4">
             ประจําเดือนของเธอ
-            เปนแบบไหน
+            เป็นแบบไหน
         </div>
         <div class="text-xs text-yellow-400 text-center">นับจากวันแรกทีมีประจําเดือนล่าสุด</div>
         <div class="radio btn-ans"><x-radio id="q-1-1" lg wire:model="data.q-1" value="1" label="ประจําเดือนมาห่างกันมากกว่า
         35 วัน หรือมาไม่เกิน 6-8
-        รอบต่อป เปนมานานแล้ว" /></div>
+        รอบต่อป เป็นมานานแล้ว" /></div>
         <div class="radio btn-ans"><x-radio id="q-1-2" lg wire:model="data.q-1" value="2" label="เคยมีประจําเดือนมาปกติ แต่
         ช่วงหลังประจําเดือนขาด
         ติดต่อกันเกิน 3 รอบ" /></div>
@@ -54,11 +54,11 @@
         </div>
         <span class="bubble border">ตอบได้มากกว่า 1 ข้อ</span>
 
-        <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2.1" value="1" label="สิวเห่อ จนหน้าเธอเปลียน" /> </div>
+        <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2.1" value="1" label="สิวเห่อ จนหน้าเธอเปลี่ยน" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-2" lg wire:model="data.q-2.2" value="2" label="หน้ามัน ทุกวัน จันทร์-อาทิตย์" /> </div>
-        <div class="checkbox btn-ans"><x-checkbox id="q-2-3" lg wire:model="data.q-2.3" value="3" label="ขนดก ตกลงเปนหญิงหรือชาย" /> </div>
+        <div class="checkbox btn-ans"><x-checkbox id="q-2-3" lg wire:model="data.q-2.3" value="3" label="ขนดก ตกลงเป็นหญิงหรือชาย" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-4" lg wire:model="data.q-2.4" value="4" label="ผมร่วง นําตาริน" /> </div>
-        <div class="checkbox btn-ans"><x-checkbox id="q-2-5" lg wire:model="data.q-2.5" value="5" label="ไม่มีอาการเปนลาภอันประเสริฐ" /> </div>
+        <div class="checkbox btn-ans"><x-checkbox id="q-2-5" lg wire:model="data.q-2.5" value="5" label="ไม่มีอาการเป็นลาภอันประเสริฐ" /> </div>
         <!-- <div class="checkbox btn-ans"><x-checkbox id="q-2-6" lg wire:model="data.checkbox_1-2.6" value="6" label="" /> </div> -->
         <x-slot:footer>
 
@@ -76,7 +76,7 @@
         <!--  $page==4?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none' }} "> -->
         <div class="bubble center w-3/4">
             ทําไมเหมือน
-            เปนผู้ชายเลย
+            เป็นผู้ชายเลย
             ทังผิวมัน ขนดก
             ผมร่วง เห้ออ
         </div>
@@ -124,9 +124,9 @@
         <div class="bubble left">
             <P class="text-base">
                 PCOS ภาวะถุงนําในรังไข่หลายใบหรือที
-                คนทัวไปเรียกซีสต์ในรังไข่ เปนความผิด
+                คนทัวไปเรียกซีสต์ในรังไข่ เป็นความผิด
                 ปกติของต่อมไร้ท่อ หรือระบบฮอร์โมน
-                ของเธอ ซึงสิงผิดปกติคือจะพบถุงนํา
+                ของเธอ ซึ่งสิงผิดปกติคือจะพบถุงนํา
                 หลายใบในรังไข่ ส่งผลให้ประจําเดือนขาด
                 แต่มีอาการร่วมสําคัญคือ ผมร่วง ขนดก
                 สิวเห่อ หน้ามัน นาํหนักเพิม
@@ -146,7 +146,7 @@
                 เกิดภาวะนําหนักเกิน ควบคุมนําหนักอย่าง
                 เคร่งครัด
                 แบบใช้ยา
-                ทานยาปรับฮอร์โมน ชนิด EE35C เพือ
+                ทานยาปรับฮอร์โมน ชนิด EE35C เพื่อ
                 ปรับสมดุล และต้านฤทธิฮอร์โมนเพศชาย
                 โดยปรึกษาแพทย์หรือเภสัชกร</P>
             <x-badge class="time absolute bottom-0" label="99-May-2023" />
