@@ -15,6 +15,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+
         @wireUiScripts
 
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])

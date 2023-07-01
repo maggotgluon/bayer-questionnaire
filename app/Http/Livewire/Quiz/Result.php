@@ -8,7 +8,7 @@ class Result extends Component
 {
     public $path,$result,$age;
 
-    public $title,$images,$content, $image_face,$lottie;
+    public $title,$images,$content, $image_face,$lottie,$idkey;
     public function mount(){
         $content['1']['1']['title']='สาวสมดุล';
         $content['1']['1']['content']='สาวสมดุล เพราะอาการก่อนมีประจําเดือน
@@ -72,7 +72,7 @@ class Result extends Component
                                         ร่างกายส่งสัญญาณผิดปกติ ต้องรีบ
                                         ปรึกษาผู้เชี่ยวชาญนะสาว';
         $content['3']['3']['images']='';
-
+        $this->idkey = 'key'.$this->path.'-'.$this->result;
         $this->title=$content[$this->path][$this->result]['title'];
         $this->content=$content[$this->path][$this->result]['content'];
         $this->images='images/result_img_'.$this->path.'-'.$this->result.'.png';
