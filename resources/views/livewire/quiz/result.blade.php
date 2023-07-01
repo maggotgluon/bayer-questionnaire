@@ -2,13 +2,16 @@
     <x-quiz-page class="page-{{$path}} top-0 left-0 animate" id="content">
         <div class="bg-white rounded-3xl drop-shadow-[10px_10px_0_rgba(0,0,0,0.5)] p-8 mx-auto max-w-xs" id='content'>
             <h3 class="text-3xl text-center">{{ $title }}</h3>
+            
 
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
+            
+            {{-- <lottie-player id="lottie" src="{{ asset($lottie) }}"
+            background="transparent" speed="1" class="w-[80%] h-auto m-auto" loop autoplay></lottie-player> --}}
+            <div class="lottie w-full h-auto" id="{{ $idkey }}"></div>
 
-            <lottie-player id="lottie" src="{{ asset($lottie) }}"
-            background="transparent" speed="1" class="w-[80%] h-auto m-auto" loop autoplay></lottie-player>
             <img id="img" src="{{ asset($images) }}"
-            class="max-w-[80%] m-auto hidden" />
+            class="max-w-[80%] m-auto" />
 
 
             <div class="relative">
@@ -35,6 +38,23 @@
     </x-quiz-page>
 
     <script>
+        document.addEventListener('livewire:load', function () {
+            // Your JS here.
+            console.log('alpine load');
+            let key = @js($idkey);
+            let lottie = @js($lottie);
+            console.log(key);
+
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById(key), // the dom element
+        
+                renderer: 'svg', // required
+                loop: true, // optional
+                autoplay: true, // optional
+                path: lottie, // the animation data
+            
+            });
+        })
 
     window.addEventListener('save-updated', event => {
         document.getElementById('lottie').classList.add('hidden')
