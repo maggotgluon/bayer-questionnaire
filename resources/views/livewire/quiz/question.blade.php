@@ -16,7 +16,7 @@
         <livewire:quiz.section.path3/>
         @break
         @case('result')
-        <livewire:quiz.result :path='1' :result='1' :age='33' />
+        {{-- <livewire:quiz.result :path='1' :result='1' :age='33' />
         <livewire:quiz.result :path='1' :result='2' :age='33' />
         <livewire:quiz.result :path='1' :result='3' :age='33' />
 
@@ -26,7 +26,7 @@
 
         <livewire:quiz.result :path='3' :result='1' :age='33' />
         <livewire:quiz.result :path='3' :result='2' :age='33' />
-        <livewire:quiz.result :path='3' :result='3' :age='33' />
+        <livewire:quiz.result :path='3' :result='3' :age='33' /> --}}
             @isset($result)
             <livewire:quiz.result
                 :path='$result->type'
