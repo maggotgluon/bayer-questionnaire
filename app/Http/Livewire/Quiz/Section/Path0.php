@@ -7,7 +7,7 @@ use Livewire\Component;
 class Path0 extends Component
 {
     public $data=[];
-    public $page=0;
+    public $page=-1;
 
     protected $rules = [
         'data.age' => 'required',

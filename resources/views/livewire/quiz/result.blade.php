@@ -10,7 +10,7 @@
             background="transparent" speed="1" class="w-[80%] h-auto m-auto" loop autoplay></lottie-player> --}}
             <div class="lottie w-full h-auto" id="{{ $idkey }}"></div>
 
-            <img id="img" src="{{ asset($images) }}" class="max-w-[80%] m-auto" />
+            <img id="img" src="{{ asset($images) }}" class="max-w-[80%] m-auto hidden" />
 
 
             <div class="relative">
@@ -32,7 +32,8 @@
         <x-slot:footer>
             <div class="grid w-3/5 m-auto">
 
-                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max" wire:click="screenshot"><span>
+                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max" 
+                    wire:click="screenshot"><span>
                         <x-icon name="save" class="w-8 inline-block" />Save Photo
                     </span></a>
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max"><span>
@@ -60,21 +61,24 @@
 
             });
             window.addEventListener('save-updated', event => {
-                document.getElementById('lottie').classList.add('hidden')
+                document.getElementById(key).classList.add('hidden')
                 document.getElementById('img').classList.remove('hidden')
+
                 html2canvas(document.getElementById('content'), {
                     onrendered: function(canvas) {
                         var imgData = canvas.toDataURL('image/png').replace("image/png",
-                            "image/octet-stream");
+                        "image/octet-stream");
+                        console.log('load canvas'+imgData);
 
                         var a = document.createElement('a');
                         a.href = imgData;
                         a.download = 'result.png';
                         document.body.appendChild(a);
-                        a.click();
-
-                        document.getElementById('lottie').classList.toggle('hidden')
-                        document.getElementById('img').classList.toggle('hidden')
+                        console.log('create element'+a)
+                        a.click(); 
+                        console.log('click on a to download')
+                        /* document.getElementById(key).classList.remove('hidden')
+                        document.getElementById('img').classList.add('hidden') */
                     }
                 })
 

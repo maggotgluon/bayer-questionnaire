@@ -1,8 +1,8 @@
 <div class="w-full m-auto min-h-screen h-auto relative page page-0">
     
     <div class="w-full relative">
-        {{--<livewire:quiz.result :path='1' :result='1' :age='33' />
-        <livewire:quiz.result :path='1' :result='2' :age='33' />
+        {{--<livewire:quiz.result :path='1' :result='2' :age='33' />
+        <livewire:quiz.result :path='1' :result='1' :age='33' />
         <livewire:quiz.result :path='1' :result='3' :age='33' />
 
         <livewire:quiz.result :path='2' :result='1' :age='33' />
