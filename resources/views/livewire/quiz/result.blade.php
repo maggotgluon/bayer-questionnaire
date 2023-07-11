@@ -3,12 +3,9 @@
         <div class="bg-white rounded-3xl drop-shadow-[10px_10px_0_rgba(0,0,0,0.5)] p-8 mx-auto max-w-xs" id='content'>
             <h3 class="text-3xl text-center">{{ $title }}</h3>
 
-
-            {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
-
-            {{-- <lottie-player id="lottie" src="{{ asset($lottie) }}"
-            background="transparent" speed="1" class="w-[80%] h-auto m-auto" loop autoplay></lottie-player> --}}
-            <div class="lottie w-full h-auto" id="{{ $idkey }}"></div>
+            <x-lottie 
+            class="lottie w-full h-auto" 
+            path="{{$lottie}}"/>
 
             <img id="img" src="{{ asset($images) }}" class="max-w-[80%] m-auto hidden" />
 
@@ -51,18 +48,11 @@
             let lottie = @js($lottie);
             console.log(key);
 
-            var animation = bodymovin.loadAnimation({
-                container: document.getElementById(key), // the dom element
-
-                renderer: 'svg', // required
-                loop: true, // optional
-                autoplay: true, // optional
-                path: lottie, // the animation data
-
-            });
             window.addEventListener('save-updated', event => {
-                document.getElementById(key).classList.add('hidden')
-                document.getElementById('img').classList.remove('hidden')
+                const lott = document.querySelector('.lottie')
+                const img = document.getElementById('img')
+                lott.classList.add('hidden')
+                img.classList.remove('hidden')
 
                 html2canvas(document.getElementById('content'), {
                     onrendered: function(canvas) {
@@ -77,12 +67,13 @@
                         console.log('create element'+a)
                         a.click(); 
                         console.log('click on a to download')
-                        /* document.getElementById(key).classList.remove('hidden')
-                        document.getElementById('img').classList.add('hidden') */
+
+                        /* lott.classList.remove('hidden')
+                        img.classList.add('hidden') */
                     }
                 })
 
             })
-        })
+        }) 
     </script>
 </div>

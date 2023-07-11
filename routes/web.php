@@ -13,6 +13,7 @@ use App\Http\Livewire\Admin\Dashboard as admin_dashboard;
 use App\Http\Livewire\Admin\Overview as admin_overview;
 use App\Http\Livewire\Admin\Users as admin_users;
 use App\Http\Livewire\Quiz\Question as client_quiz;
+use App\Http\Livewire\Quiz\Result as client_result;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -72,3 +73,4 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/quiz', client_quiz::class)->name('quiz');
+Route::get('/result/{path}/{result}/{age}', client_result::class)->name('result');

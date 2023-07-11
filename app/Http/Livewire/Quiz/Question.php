@@ -35,7 +35,12 @@ class Question extends Component
                 'type'=>$this->data['section1']['path'],
                 'score'=>$this->data['section_part']['score'],
             ]);
-            // dd($m);
+            // dd($this->result);
+            redirect()->route('result',[
+                'path'=>$this->data['section1']['path'],
+                'result'=>$this->data['section_part']['result'],
+                'age'=>$this->data['section1']['age']
+            ]);
             // dd($this->data,$this->step);
         }
 

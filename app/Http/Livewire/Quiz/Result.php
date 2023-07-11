@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Quiz;
 
 use Livewire\Component;
+use VerumConsilium\Browsershot\Facades\Screenshot;
 
 class Result extends Component
 {
@@ -72,12 +73,16 @@ class Result extends Component
                                         ร่างกายส่งสัญญาณผิดปกติ ต้องรีบ
                                         ปรึกษาผู้เชี่ยวชาญนะสาว';
         $content['3']['3']['images']='';
-        $this->idkey = 'key'.$this->path.'-'.$this->result;
-        $this->title=$content[$this->path][$this->result]['title'];
-        $this->content=$content[$this->path][$this->result]['content'];
-        $this->images='images/result_img_'.$this->path.'-'.$this->result.'.png';
-        $this->lottie='images/lottie/result'.$this->path.'-'.$this->result.'.json';
-        $this->image_face = 'images/result_'.$this->result.'.png';
+        $path = $this->path;
+        $result = $this->result;
+        // dd($path,gettype($path),$result,gettype($result));
+        $this->idkey = 'key'.$path.'-'.$result;
+        $this->title=$content[$path][$result]['title'];
+        $this->content=$content[$path][$result]['content'];
+        $this->images='images/result_img_'.$path.'-'.$result.'.png';
+        
+        $this->lottie=asset('images/lottie/result'.$path.'-'.$result.'.json');
+        $this->image_face = 'images/result_'.$result.'.png';
     }
 
 

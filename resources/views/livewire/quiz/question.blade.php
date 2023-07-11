@@ -2,13 +2,13 @@
     
     <div class="w-full relative">
         {{--<livewire:quiz.result :path='1' :result='2' :age='33' />
+        <livewire:quiz.result :path=1 :result=3 :age='33' />
         <livewire:quiz.result :path='1' :result='1' :age='33' />
-        <livewire:quiz.result :path='1' :result='3' :age='33' />
-
+        
         <livewire:quiz.result :path='2' :result='1' :age='33' />
         <livewire:quiz.result :path='2' :result='2' :age='33' />
         <livewire:quiz.result :path='2' :result='3' :age='33' />
-
+        
         <livewire:quiz.result :path='3' :result='1' :age='33' />
         <livewire:quiz.result :path='3' :result='2' :age='33' />
         <livewire:quiz.result :path='3' :result='3' :age='33' /> --}}
@@ -26,13 +26,17 @@
         <livewire:quiz.section.path3/>
         @break
         @case('result')
-        
+            
             @isset($result)
             <livewire:quiz.result
                 :path='$result->type'
                 :result='$result->result'
                 :age='$result->ages' />
             @endisset
+            <p>type : {{var_export($result->type)}}<br>
+            result : {{var_export($result->result)}}<br>
+            ages : {{var_export($result->ages)}}</p>
+            
         @break
 
         @default
