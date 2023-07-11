@@ -75,6 +75,10 @@
     "file": "assets/bg-element-c405e5a4.svg",
     "src": "resources/assets/images/bg-element.svg"
   },
+  "resources/assets/images/bg-first.svg": {
+    "file": "assets/bg-first-daf8677f.svg",
+    "src": "resources/assets/images/bg-first.svg"
+  },
   "resources/assets/images/bg-green.svg": {
     "file": "assets/bg-green-2c826871.svg",
     "src": "resources/assets/images/bg-green.svg"
@@ -141,7 +145,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-cb8e7d2f.css",
+    "file": "assets/app-7d226088.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
