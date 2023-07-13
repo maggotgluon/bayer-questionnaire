@@ -100,10 +100,10 @@ class Path3 extends Component
 
         $this->data['score'] = $score;
         switch (true) {
-            case ($score<=5):
+            case ($score==0):
                 $this->data['result'] = 1;
                 break;
-            case ($score=6):
+            case ($score<=2):
                 $this->data['result'] = 2;
                 break;
             default:
