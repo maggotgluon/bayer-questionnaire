@@ -13,7 +13,7 @@
         <livewire:quiz.result :path='3' :result='2' :age='33' />
         <livewire:quiz.result :path='3' :result='3' :age='33' /> --}}
         @switch($step)
-        @case('0')
+        @case('0')    
         <livewire:quiz.section.path0/>
         @break
         @case('1')
@@ -33,9 +33,9 @@
                 :result='$result->result'
                 :age='$result->ages' />
             @endisset
-            <p>type : {{var_export($result->type)}}<br>
+            {{-- <p>type : {{var_export($result->type)}}<br>
             result : {{var_export($result->result)}}<br>
-            ages : {{var_export($result->ages)}}</p>
+            ages : {{var_export($result->ages)}}</p> --}}
             
         @break
 

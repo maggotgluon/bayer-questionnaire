@@ -33,9 +33,18 @@
                     wire:click="screenshot"><span>
                         <x-icon name="save" class="w-8 inline-block" />Save Photo
                     </span></a>
-                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max"><span>
+                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max"
+                    rel="nofollow noopener noreferrer"
+                    target="_blank"
+                    href="{!!Share::page(route('home'), 
+                    'Share title')->facebook()->getRawLinks()!!}"
+                ><span>
                         <x-icon name="share" class="w-8 inline-block" />Share Quiz
                     </span></a>
+                    {{-- {!!Share::page(route('home'), 
+                            'Share',
+                            ['class' => 'text-5xl', 'title' => 'share', 'rel' => 'nofollow noopener noreferrer']
+                        )->facebook()!!} --}}
             </div>
         </x-slot:footer>
     </x-quiz-page>

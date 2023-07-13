@@ -9,6 +9,7 @@
         "aldeebhasan/lottie-laravel": "^1.0",
         "asantibanez/livewire-charts": "^2.5",
         "guzzlehttp/guzzle": "^7.2",
+        "jorenvanhocht/laravel-share": "^4.2",
         "laravel-frontend-presets/tall": "5.0.3",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",

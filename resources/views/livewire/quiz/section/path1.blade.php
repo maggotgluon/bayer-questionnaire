@@ -195,7 +195,7 @@
 
         <div class="bubble center">
             เป็นมิตรอย่างเข้าใจ
-            ปรึกษาเพิมเติมได้ที่..
+            มาดูผลลัพธ์กัน
         </div>
 
         <img src="{{ asset('images/img_1-3.svg') }}" class="max-w-[80%] m-auto" />

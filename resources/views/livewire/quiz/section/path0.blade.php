@@ -30,28 +30,35 @@
     @case(1)
     <form wire:submit.prevent="next">
         <x-quiz-page class="page-0 absolute top-0 left-0 animate">
-            <div class="mb-8 mt-4 text-center">
+            <div class="mb-8 mt-4 text-center" wire:poll.1000ms.visible="sec">
                 <x-timestamp date=true time=false />
             </div>
-
+            @if ($sec>=1)
             <x-chat-bubble text="สวัสดี..." time=true size="lg" direction="left" />
-
+            @endif
+            @if ($sec>=2)
             <x-chat-bubble text="อายุเท่าไหร่?" time=true size="lg" direction="left" />
-
+            @endif
+            @if ($sec>=3)
             <x-chat-bubble time=true size="lg" direction="right" class="alternative">
                 <x-input placeholder="กรอกอายุ" wire:model="data.age" 
                 autofocus require type="number" min=10 max=99 
                 class="clear" />
             </x-chat-bubble>
-
-            <x-chat-bubble text="ถ้าพร้อมแล้ว กด “GO” เลยค่ะสาว" time=true size="lg" direction="left" />
-
-
-            <x-slot:footer>
-                <button class="btn-go" type="submit">
-                    GO!
-                </button>
-            </x-slot:footer>
+            @endif
+            @isset($data['age'])
+                @if ($sec>=4)
+                <x-chat-bubble text="ถ้าพร้อมแล้ว กด “GO” เลยค่ะสาว" time=true size="lg" direction="left" />
+                @endif
+                
+                @if ($sec>=5)
+                <x-slot:footer>
+                    <button class="btn-go" type="submit">
+                        GO!
+                    </button>
+                </x-slot:footer>
+                @endif
+            @endisset
         </x-quiz-page>
     </form>
     @break

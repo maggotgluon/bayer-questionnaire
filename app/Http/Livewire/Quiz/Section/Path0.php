@@ -7,7 +7,7 @@ use Livewire\Component;
 class Path0 extends Component
 {
     public $data=[];
-    public $page=-1;
+    public $page=-1,$sec;
 
     protected $rules = [
         'data.age' => 'required',
@@ -19,7 +19,12 @@ class Path0 extends Component
         $this->data['check']=[];
         $this->data['path']=[];
     }
+
+    public function sec(){
+        $this->sec+=1;
+    }
     public function next($page=null){
+        $this->sec=0;
         $go = $page??$this->page;
         if($go==1){
             $this->validateOnly('data.age');
