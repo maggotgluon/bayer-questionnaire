@@ -16,6 +16,11 @@ class Path3 extends Component
         'data.q-2' => 'required',
         'data.q-4' => 'required'
     ];
+    protected $messages = [
+        'data.q-1.required' => 'กรุณากดตัวเลือก',
+        'data.q-2.required' => 'กรุณากดตัวเลือก',
+        'data.q-4.required' => 'กรุณากดตัวเลือก',
+    ];
     public function mount(){
 
         $this->data['question-1']='ประจําเดือนของเธอ เป็นแบบไหน';

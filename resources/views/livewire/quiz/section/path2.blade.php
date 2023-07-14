@@ -159,10 +159,11 @@
                 เป็น สิวตุ่มหนอง สิวหัวช้าง
                 <span class="grid grid-cols-2">
                     <span>
-
+                        <img src="{{asset('images/piple-1.jpg')}}" />
                         สิวตุ่มหนอง
                     </span>
                     <span>
+                        <img src="{{asset('images/piple-2.jpg')}}" />
                         สิวหัวช้าง
                     </span>
                 </span>

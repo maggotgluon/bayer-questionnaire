@@ -17,6 +17,12 @@ class Path1 extends Component
         'data.q-3' => 'required',
         'data.q-4' => 'required'
     ];
+    protected $messages = [
+        'data.q-1.required' => 'กรุณากดตัวเลือก',
+        'data.q-2.required' => 'กรุณากดตัวเลือก',
+        'data.q-3.required' => 'กรุณากดตัวเลือก',
+        'data.q-4.required' => 'กรุณากดตัวเลือก',
+    ];
     public function count($num){
         // dd($num);
         $this->data['q-3']=$this->data['q-3']+$num;

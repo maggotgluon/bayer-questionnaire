@@ -14,6 +14,12 @@ class Path0 extends Component
         'data.check' => 'required',
         'data.path'=>'required'
     ];
+    protected $messages = [
+        'data.age.required' => 'กรุณากดตัวเลือก',
+        'data.check.required' => 'กรุณากดตัวเลือก',
+        'data.path.required' => 'กรุณากดตัวเลือก',
+    ];
+    
 
     public function mount(){
         $this->data['check']=[];

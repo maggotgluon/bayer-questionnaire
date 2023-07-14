@@ -17,6 +17,12 @@ class Path2 extends Component
         'data.q-3' => 'required',
         'data.q-4' => 'required'
     ];
+    protected $messages = [
+        'data.q-1.required' => 'กรุณากดตัวเลือก',
+        'data.q-2.required' => 'กรุณากดตัวเลือก',
+        'data.q-3.required' => 'กรุณากดตัวเลือก',
+        'data.q-4.required' => 'กรุณากดตัวเลือก',
+    ];
     public function mount(){
 
         $this->data['question-1']='สิวขึ้นบริเวณไหนก่อนมีประจำเดือน';
