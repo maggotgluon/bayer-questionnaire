@@ -2,9 +2,15 @@
     <div class="flex justify-end">
         <x-native-select
             label="Select Status"
-            placeholder="Select one status"
-            :options="['Active', 'Pending', 'Stuck', 'Done']"
-            wire:model="model"
+            :options="[
+                ['name'=>'แสดงทั้งหมด',   'value'=>0 ],
+                ['name'=>'PMDD',        'value'=>1 ],
+                ['name'=>'สิวฮอร์โมน',    'value'=>2 ],
+                ['name'=>'PCOS',        'value'=>3 ]
+                ]"
+            option-label="name"
+            option-value="value"
+            wire:model="filter"
         />
     </div>
 <div class="grid gap-4 py-2">

@@ -10,7 +10,7 @@ md:h-screen flex md:flex-col flex-wrap gap-2 pb-6 text-white shadow-[0_0_0.5rem_
 
 
     <div class="flex justify-center">
-        <x-button emerald label="Export Report" icon="document-text" />
+        <x-button emerald label="Export Report" wire:click="exportData" icon="document-text" />
     </div>
 
 

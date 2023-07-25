@@ -45,7 +45,7 @@ Route::get('password/reset/{token}', Reset::class)
     ->name('password.reset');
 
 Route::middleware('auth')->group(function () {
-    // Route::view('/', 'welcome')->name('home');
+    
     Route::get('/dash', admin_dashboard::class)->name('dashboard');
     Route::get('/admin/overview', admin_overview::class)->name('overview');
     Route::get('/admin/users', admin_users::class)->name('users');
