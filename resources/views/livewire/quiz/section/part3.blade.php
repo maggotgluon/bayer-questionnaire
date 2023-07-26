@@ -57,7 +57,7 @@
         <div class="checkbox btn-ans"><x-checkbox id="q-2-1" lg wire:model="data.q-2.1" value="1" label="สิวเห่อ จนหน้าเธอเปลี่ยน" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-2" lg wire:model="data.q-2.2" value="2" label="หน้ามัน ทุกวัน จันทร์-อาทิตย์" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-3" lg wire:model="data.q-2.3" value="3" label="ขนดก ตกลงเป็นหญิงหรือชาย" /> </div>
-        <div class="checkbox btn-ans"><x-checkbox id="q-2-4" lg wire:model="data.q-2.4" value="4" label="ผมร่วง นําตาริน" /> </div>
+        <div class="checkbox btn-ans"><x-checkbox id="q-2-4" lg wire:model="data.q-2.4" value="4" label="ผมร่วง น้ำตาริน" /> </div>
         <div class="checkbox btn-ans"><x-checkbox id="q-2-5" lg wire:model="data.q-2.5" value="5" label="ไม่มีอาการเป็นลาภอันประเสริฐ" /> </div>
         <!-- <div class="checkbox btn-ans"><x-checkbox id="q-2-6" lg wire:model="data.checkbox_1-2.6" value="6" label="" /> </div> -->
         <x-slot:footer>
@@ -95,7 +95,7 @@
         <!--  $page==5?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none' }} "> -->
         <div class="bubble center w-3/4">
             รู้จักภาวะ “PCOS
-            หรือภาวะถุงนําใน
+            หรือภาวะถุงน้ำใน
             รังไข่หลายใบ
             /ซีสต์ในรังไข่” ไหม
         </div>
@@ -123,10 +123,10 @@
 
         <div class="bubble left">
             <P class="text-base">
-                PCOS ภาวะถุงนําในรังไข่หลายใบหรือที
+                PCOS ภาวะถุงน้ำในรังไข่หลายใบหรือที
                 คนทัวไปเรียกซีสต์ในรังไข่ เป็นความผิด
                 ปกติของต่อมไร้ท่อ หรือระบบฮอร์โมน
-                ของเธอ ซึ่งสิงผิดปกติคือจะพบถุงนํา
+                ของเธอ ซึ่งสิงผิดปกติคือจะพบถุงน้ำ
                 หลายใบในรังไข่ ส่งผลให้ประจําเดือนขาด
                 แต่มีอาการร่วมสําคัญคือ ผมร่วง ขนดก
                 สิวเห่อ หน้ามัน นาํหนักเพิม
@@ -135,15 +135,14 @@
         </div>
         <div class="bubble left">
             <P class="text-base">
-                วิธีการรักษามีทังแบบไม่ใช้ยา
+                วิธี การรักษามีทังแบบไม่ใช้ยา
                 และแบบใช้ยา</P>
             <x-badge class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
             <P class="text-base">
                 แบบไม่ใช้ยา
-                ปรับเปลยีนชีวิตประจําวัน เนืองจากอาจ
-                เกิดภาวะนําหนักเกิน ควบคุมนําหนักอย่าง
+                ปรับเปลยีนชีวิตประจําวัน เนื่องจากอาจเกิดภาวะน้ำหนักเกิน ควบคุมน้ำหนักอย่าง
                 เคร่งครัด
                 แบบใช้ยา
                 ทานยาปรับฮอร์โมน ชนิด EE35C เพื่อ
