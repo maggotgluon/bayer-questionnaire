@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Quiz;
 
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use VerumConsilium\Browsershot\Facades\Screenshot;
 
@@ -87,7 +88,11 @@ class Result extends Component
 
 
     public function screenshot(){
-        $this->dispatchBrowserEvent('save-updated');
+        // dd(response()->download('images/result/Result-'.$this->path.'-'.$this->result.'.png'));
+        
+        // return Storage::download(asset('result/Result-1-1.png'));
+        return response()->download('images/result/Result-'.$this->path.'-'.$this->result.'.png');
+        // $this->dispatchBrowserEvent('save-updated');
     }
     public function render()
     {
