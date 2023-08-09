@@ -81,8 +81,9 @@ class Result extends Component
         $this->title=$content[$path][$result]['title'];
         $this->content=$content[$path][$result]['content'];
         $this->images='images/result_img_'.$path.'-'.$result.'.png';
-        
+                
         $this->lottie=asset('images/lottie/result'.$path.'-'.$result.'.json');
+
         $this->image_face = 'images/result_'.$result.'.png';
     }
 

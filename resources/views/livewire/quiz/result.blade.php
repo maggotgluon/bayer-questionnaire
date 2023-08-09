@@ -2,10 +2,17 @@
     <x-quiz-page class="page-{{ $path }} top-0 left-0 animate" id="content">
         <div class="bg-white rounded-3xl drop-shadow-[10px_10px_0_rgba(0,0,0,0.5)] p-8 mx-auto max-w-xs" id='content'>
             <h3 class="text-3xl text-center">{{ $title }}</h3>
-
-            <x-lottie 
-            class="lottie w-full h-auto" 
-            path="{{$lottie}}"/>
+            @if($path == 3 && $result == 2)
+                <img id="img" src="{{ asset($images) }}" 
+                class="max-w-[80%] m-auto" />
+            @elseif($path == 3 && $result == 3)
+                <img id="img" src="{{ asset($images) }}" 
+                class="max-w-[80%] m-auto" />
+            @else
+                <x-lottie 
+                class="lottie w-full h-auto" 
+                path="{{$lottie}}"/>
+            @endif
 
             <img id="img" src="{{ asset($images) }}" class="max-w-[80%] m-auto hidden" />
 
