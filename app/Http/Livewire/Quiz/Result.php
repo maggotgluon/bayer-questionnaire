@@ -87,11 +87,11 @@ class Result extends Component
     }
 
 
-    public function screenshot(){
+    public function screenshot2(){
         // dd(response()->download('images/result/Result-'.$this->path.'-'.$this->result.'.png'));
+        // return response()->download('images/result/Result-'.$this->path.'-'.$this->result.'.png');
         
         // return Storage::download(asset('result/Result-1-1.png'));
-        return response()->download('images/result/Result-'.$this->path.'-'.$this->result.'.png');
         // $this->dispatchBrowserEvent('save-updated');
     }
     public function render()
