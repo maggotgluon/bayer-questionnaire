@@ -84,15 +84,18 @@ class Path1 extends Component
         $this->data['answer-1'][] = in_array('3', $this->data['q-1']) ? 'อา..รมณ์เสีย อารมณ์เสียยยยย อารมณ์เสียยยยยย !' : null;
         $this->data['answer-1'] = array_filter($this->data['answer-1']);
         $score += count($this->data['answer-1']);
-
+        
         $this->data['answer-2'][] = in_array('1', $this->data['q-2']) ? 'นอนไม่หลับ ร่างกายกระสับกระส่าย' : null;
         $this->data['answer-2'][] = in_array('2', $this->data['q-2']) ? 'ตัวบวม หน้าบวม รวมๆแล้วเซ็ง' : null;
         $this->data['answer-2'][] = in_array('3', $this->data['q-2']) ? 'สิวเก่ายังไม่หาย สิวใหม่ก็มาแทรก' : null;
         $this->data['answer-2'][] = in_array('4', $this->data['q-2']) ? 'ปวดท้องน้อย มากๆ' : null;
         $this->data['answer-2'][] = in_array('5', $this->data['q-2']) ? 'ร่างกายปกติที่แสนพิเศษ' : null;
         $this->data['answer-2'] = array_filter($this->data['answer-2']);
-        $score += count(Arr::except($this->data['q-2'], 5));
-        
+        $score += count(
+            Arr::where($this->data['q-2'], function (string|int $value, int $key) {
+                return $value!=5;
+            })
+        );
         $this->data['question-3'] = 'เธอมักจะมีอาการเหล่านี้้ ก่อนเป็นประจําเดือนกี่วัน';
         $this->data['answer-3'][] =  $this->data['q-3'].' วัน';
         if ($this->data['q-3'] <= 10) {
@@ -116,6 +119,7 @@ class Path1 extends Component
         }
 
         $this->data['score'] = $score;
+        // dd($score);
         switch (true) {
             case ($score<3):
                 $this->data['result'] = 1;

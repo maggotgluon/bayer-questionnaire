@@ -88,8 +88,12 @@ class Path3 extends Component
         $this->data['answer-2'][] = in_array('3', $this->data['q-2']) ? $this->raw['answer-2']['3'] : null;
         $this->data['answer-2'][] = in_array('4', $this->data['q-2']) ? $this->raw['answer-2']['4'] : null;
         $this->data['answer-2'] = array_filter($this->data['answer-2']);
-        $score += count(Arr::except($this->data['q-2'], 5));
-
+        // $score += count(Arr::except($this->data['q-2'], 5));
+        $score += count(
+                    Arr::where($this->data['q-2'], function (string|int $value, int $key) {
+                        return $value!=5;
+                    })
+                );
         switch ($this->data['q-4']) {
             case '1':
                 $this->data['answer-4'][] =  $this->raw['answer-4']['1'];
