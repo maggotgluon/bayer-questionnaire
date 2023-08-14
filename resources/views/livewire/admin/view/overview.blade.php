@@ -1,15 +1,15 @@
 <div class="flex flex-col p-6 gap-4">
     <div class="grid grid-cols-7 gap-4">
         <div class="col-span-3 h-min ">
-            admin dashboard
+            
+        </div>
+        <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white opacity-0">
+            <span>F</span>
+            <span>{{$fb_shared}} share</span>
         </div>
         <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white">
             <span>F</span>
-            <span>1000 share</span>
-        </div>
-        <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white">
-            <span>F</span>
-            <span>1000 share</span>
+            <span>{{$fb_shared}} share</span>
         </div>
     </div>
 
