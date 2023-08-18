@@ -160,15 +160,17 @@
             <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
         <div class="bubble left">
-            <P class="text-base">
+            <p class="text-base">
                 เริ่มจากการปรับพฤติกรรม <br>
-                <ol>
+            </p>
+                <ol class="text-base">
                     <li>1. รับประทานอาหารที่มีประโยชน์</li>
-                        <li>2. ออกกำลังกาย</li>
-                            <li>3. ฝึกจิตจัดการอารมณ์</li>
+                    <li>2. ออกกำลังกาย</li>
+                    <li>3. ฝึกจิตจัดการอารมณ์</li>
                 </ol>
+            <p class="text-base">
                 ถ้าปรับพฤติกรรมแล้วเธอไม่ดีขึ้น สามารถใช้ตัวช่วยปรับฮอร์โมน เช่น EE20D เพื่อช่วยปรับสมดุลฮอร์โมนในร่างกาย โดยปรึกษาแพทย์หรือเภสัชกรผู้เชี่ยวชาญ เพื่อร่วมกันหาทางออกก่อนที่เธอจะไปดุดันใส่ใครโดยไม่ได้ตั้งใจน้า
-            </P>
+            </p>
                 
             <x-badge flat  class="time absolute bottom-0" label="{{now()->todateString()}}" />
         </div>
