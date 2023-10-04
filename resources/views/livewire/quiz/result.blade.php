@@ -35,12 +35,11 @@
 
         <x-slot:footer>
             <div class="grid w-3/5 m-auto">
-
-                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max" 
+                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
                     wire:click="screenshot2"><span>
                         <x-icon name="save" class="w-8 inline-block" />Save Photo
                     </span></a>
-                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max"
+                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer"
                     rel="nofollow noopener noreferrer"
                     target="_blank"
                     href="{!!Share::page(route('home'), 
@@ -48,6 +47,14 @@
                 ><span>
                         <x-icon name="share" class="w-8 inline-block" />Share Quiz
                     </span></a>
+
+
+                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
+                wire:click="go_bkk"><span>
+                    ปรึกษาผู้เชี่ยวชาญ<br> ผ่านร้านยากรุงเทพ
+                </span></a>
+                    
+                    
                     {{-- {!!Share::page(route('home'), 
                             'Share',
                             ['class' => 'text-5xl', 'title' => 'share', 'rel' => 'nofollow noopener noreferrer']

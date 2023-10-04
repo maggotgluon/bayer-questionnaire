@@ -87,7 +87,11 @@ class Result extends Component
         $this->image_face = 'images/result_'.$result.'.png';
     }
 
-
+    public function go_bkk(){
+        dd('go bkk drugstore');
+        // call api
+        // readdir to return api call
+    }
     public function screenshot2(){
         // dd(response()->download('images/result/Result-'.$this->path.'-'.$this->result.'.png'));
         $this->dispatchBrowserEvent('save-updated');
