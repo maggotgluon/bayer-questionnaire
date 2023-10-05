@@ -88,7 +88,39 @@ class Result extends Component
     }
 
     public function go_bkk(){
-        dd('go bkk drugstore');
+        // dd('go bkk drugstore');
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://mobile.bangkokdrugstore.co.th/api/external/dynamiclink/screen/createDynamicLinks',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+            "screen":"chatroom",
+            "type":"TR",
+            "value":{
+                "message":'.$this->result.',
+                "is_register":"N"
+            }
+        }',
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json',
+            'source: EX00901',
+            'apikey: UO7ModkwHsXKNPHhPgiM9VaBxKTPE5TZ9x45b8GXT2SRK34CpAXaxWFpKBwR36m0jQqBZAIVI12QezQGoFI3Hw=='
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return redirect(json_decode($response)->deep_links);
+
         // call api
         // readdir to return api call
     }
