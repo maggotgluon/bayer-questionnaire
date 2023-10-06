@@ -98,21 +98,24 @@ class Result extends Component
         // dd('go bkk drugstore');
         $q = $this->ans;
         // dd($q,$q->answers,$this->ans);
-        $data = "ID".str_pad($q->id, 5,'0',STR_PAD_LEFT)."\n";
-        $data.= "AGE".$q->ages."\n";
-        $data.=$q->created_at."\n";
-        $data.=is_array($q->answers['section1']['select'])?implode(',',$q->answers['section1']['select']):$q->answers['section1']['select']."\n";
-        $data.="\n".$q->answers['section_part']['question-1']."\n";
-        $data.=is_array($q->answers['section_part']['answer-1'])?implode(',',$q->answers['section_part']['answer-1']):$q->answers['section_part']['answer-1']."\n";
-        $data.="\n".$q->answers['section_part']['question-2']."\n";
-        $data.=is_array($q->answers['section_part']['answer-2'])?implode(',',$q->answers['section_part']['answer-2']):$q->answers['section_part']['answer-2']."\n";
+        $data='{"screen":"chatroom","type":"TR","value":{"message":"';
+        $data.= "ID".str_pad($q->id, 5,'0',STR_PAD_LEFT)."/n";
+        $data.= "AGE".$q->ages."/n";
+        $data.=$q->created_at."/n";
+        $data.=is_array($q->answers['section1']['select'])?implode(',',$q->answers['section1']['select']):$q->answers['section1']['select']."/n";
+        $data.="/n".$q->answers['section_part']['question-1']."/n";
+        $data.=is_array($q->answers['section_part']['answer-1'])?implode(',',$q->answers['section_part']['answer-1']):$q->answers['section_part']['answer-1']."/n";
+        $data.="/n".$q->answers['section_part']['question-2']."/n";
+        $data.=is_array($q->answers['section_part']['answer-2'])?implode(',',$q->answers['section_part']['answer-2']):$q->answers['section_part']['answer-2']."/n";
         if(isset($q->answers['section_part']['question-3'])){
-            $data.="\n".$q->answers['section_part']['question-3']."\n";
-            $data.=is_array($q->answers['section_part']['answer-3'])?implode(',',$q->answers['section_part']['answer-3']):$q->answers['section_part']['answer-3']."\n";
+            $data.="/n".$q->answers['section_part']['question-3']."/n";
+            $data.=is_array($q->answers['section_part']['answer-3'])?implode(',',$q->answers['section_part']['answer-3']):$q->answers['section_part']['answer-3']."/n";
         }
-        $data.="\n".$q->answers['section_part']['question-4']."\n";
-        $data.=is_array($q->answers['section_part']['answer-4'])?implode(',',$q->answers['section_part']['answer-4']):$q->answers['section_part']['answer-4']."\n";
+        $data.="/n".$q->answers['section_part']['question-4']."/n";
+        $data.=is_array($q->answers['section_part']['answer-4'])?implode(',',$q->answers['section_part']['answer-4']):$q->answers['section_part']['answer-4']."/n";
         // dd($data,$q->answers,$this->ans);
+        $data.='","is_register":"N"}}';
+        // dd($data);
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -124,14 +127,7 @@ class Result extends Component
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>'{
-            "screen":"chatroom",
-            "type":"TR",
-            "value":{
-                "message":'.$data.',
-                "is_register":"N"
-            }
-        }',
+        CURLOPT_POSTFIELDS =>$data,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'source: EX00901',
@@ -142,6 +138,7 @@ class Result extends Component
         $response = curl_exec($curl);
 
         curl_close($curl);
+        dd(json_decode($response),$data);
         return redirect(json_decode($response)->deep_links);
 
         // call api
