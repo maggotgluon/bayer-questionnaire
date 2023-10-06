@@ -35,6 +35,12 @@
 
         <x-slot:footer>
             <div class="grid w-3/5 m-auto">
+
+                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
+                wire:click="go_bkk"><span>
+                    ปรึกษาผู้เชี่ยวชาญ<br> ผ่านร้านยากรุงเทพ
+                </span></a>
+                
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
                     wire:click="screenshot2"><span>
                         <x-icon name="save" class="w-8 inline-block" />Save Photo
@@ -49,10 +55,6 @@
                     </span></a>
 
 
-                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
-                wire:click="go_bkk"><span>
-                    ปรึกษาผู้เชี่ยวชาญ<br> ผ่านร้านยากรุงเทพ
-                </span></a>
                     
                     
                     {{-- {!!Share::page(route('home'), 

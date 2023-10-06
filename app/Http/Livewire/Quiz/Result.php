@@ -5,12 +5,16 @@ namespace App\Http\Livewire\Quiz;
 // use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 // use VerumConsilium\Browsershot\Facades\Screenshot;
+use App\Models\Question;
+
 
 class Result extends Component
 {
     public $path,$result,$age;
+    public $ans;
 
     public $title,$images,$content, $image_face,$lottie,$idkey;
+    protected $queryString = ['id'];
     public function mount(){
         $content['1']['1']['title']='สาวสมดุล';
         $content['1']['1']['content']='สาวสมดุล เพราะอาการก่อนมีประจําเดือน
@@ -74,8 +78,11 @@ class Result extends Component
                                         ร่างกายส่งสัญญาณผิดปกติ ต้องรีบ
                                         ปรึกษาผู้เชี่ยวชาญนะสาว';
         $content['3']['3']['images']='';
+
         $path = $this->path;
         $result = $this->result;
+        $this->ans = Question::find($this->id);
+        // dd($data->answers,$data);
         // dd($path,gettype($path),$result,gettype($result));
         $this->idkey = 'key'.$path.'-'.$result;
         $this->title=$content[$path][$result]['title'];
@@ -89,7 +96,23 @@ class Result extends Component
 
     public function go_bkk(){
         // dd('go bkk drugstore');
-
+        $q = $this->ans;
+        // dd($q,$q->answers,$this->ans);
+        $data = "ID".str_pad($q->id, 5,'0',STR_PAD_LEFT)."\n";
+        $data.= "AGE".$q->ages."\n";
+        $data.=$q->created_at."\n";
+        $data.=is_array($q->answers['section1']['select'])?implode(',',$q->answers['section1']['select']):$q->answers['section1']['select']."\n";
+        $data.="\n".$q->answers['section_part']['question-1']."\n";
+        $data.=is_array($q->answers['section_part']['answer-1'])?implode(',',$q->answers['section_part']['answer-1']):$q->answers['section_part']['answer-1']."\n";
+        $data.="\n".$q->answers['section_part']['question-2']."\n";
+        $data.=is_array($q->answers['section_part']['answer-2'])?implode(',',$q->answers['section_part']['answer-2']):$q->answers['section_part']['answer-2']."\n";
+        if(isset($q->answers['section_part']['question-3'])){
+            $data.="\n".$q->answers['section_part']['question-3']."\n";
+            $data.=is_array($q->answers['section_part']['answer-3'])?implode(',',$q->answers['section_part']['answer-3']):$q->answers['section_part']['answer-3']."\n";
+        }
+        $data.="\n".$q->answers['section_part']['question-4']."\n";
+        $data.=is_array($q->answers['section_part']['answer-4'])?implode(',',$q->answers['section_part']['answer-4']):$q->answers['section_part']['answer-4']."\n";
+        // dd($data,$q->answers,$this->ans);
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -105,7 +128,7 @@ class Result extends Component
             "screen":"chatroom",
             "type":"TR",
             "value":{
-                "message":'.$this->result.',
+                "message":'.$data.',
                 "is_register":"N"
             }
         }',
@@ -133,6 +156,7 @@ class Result extends Component
     }
     public function render()
     {
+        
         return view('livewire.quiz.result');
     }
 }

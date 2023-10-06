@@ -12,7 +12,6 @@ class Question extends Component
     public $data=[];
     public $data1=[];
     public $now=[];
-
     public $result;
 
 
@@ -35,8 +34,11 @@ class Question extends Component
                 'type'=>$this->data['section1']['path'],
                 'score'=>$this->data['section_part']['score'],
             ]);
-            // dd($this->result);
+            // dd($this->result,$this->data);
+            
             redirect()->route('result',[
+                // 'data'=>$this->data,
+                'id'=>$this->result->id,
                 'path'=>$this->data['section1']['path'],
                 'result'=>$this->data['section_part']['result'],
                 'age'=>$this->data['section1']['age']

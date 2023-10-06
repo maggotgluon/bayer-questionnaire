@@ -33,6 +33,7 @@
             
             @isset($result)
             <livewire:quiz.result
+                :data='$data'
                 :path='$result->type'
                 :result='$result->result'
                 :age='$result->ages' />
