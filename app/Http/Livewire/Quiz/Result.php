@@ -138,7 +138,7 @@ class Result extends Component
         $response = curl_exec($curl);
 
         curl_close($curl);
-        dd(json_decode($response),$data);
+        // dd(json_decode($response),$data);
         return redirect(json_decode($response)->deep_links);
 
         // call api
