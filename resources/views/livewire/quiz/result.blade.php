@@ -36,10 +36,10 @@
         <x-slot:footer>
             <div class="grid w-3/5 m-auto">
 
-                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
+                {{-- <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
                 wire:click="go_bkk"><span>
                     ปรึกษาผู้เชี่ยวชาญ<br> ผ่านร้านยากรุงเทพ
-                </span></a>
+                </span></a> --}}
                 
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
                     wire:click="screenshot2"><span>

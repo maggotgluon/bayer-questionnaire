@@ -126,23 +126,23 @@ class Result extends Component
         switch ($q->result) {
             case '1':
                 # code...
-                $data.='Fine/';
+                $data.='Normal ยังสบาย หายห่วง';
                 break;
             case '2':
                 # code...
-                $data.='Normal/';
+                $data.='Moderate ปรึกษาแพทย์/เภสัช หน่อยน๊า';
                 break;
             case '3':
                 # code...
-                $data.='Synptoms/';
+                $data.='Severe ปรึกษาแพทย์/เภสัชด่วนจ้า';
                 break;
             default:
                 # code...
-                $data.='UNKNOWN/';
+                $data.='UNKNOWN';
                 break;
         }
         
-        $data.='\"';
+        $data.='/\"';
         $data.=is_array($q->answers['section1']['select'])?
                                     implode(',',$q->answers['section1']['select'])."/"
                                     :$q->answers['section1']['select']."/";
@@ -190,7 +190,7 @@ class Result extends Component
         $response = curl_exec($curl);
 
         curl_close($curl);
-        dd($response,json_decode($response),$data);
+        // dd($response,json_decode($response),$data);
         return redirect(json_decode($response)->deep_links);
 
         // call api
