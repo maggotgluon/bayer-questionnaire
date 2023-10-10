@@ -103,6 +103,8 @@ class Result extends Component
         // $data.= "ID".str_pad($q->id, 5,'0',STR_PAD_LEFT)."/n";
         // $data.= "AGE".$q->ages."/n";
         // $data.=$q->created_at."/n";
+
+        $data.='\"';
         switch ($q->type) {
             case '1':
                 # code...
@@ -118,6 +120,7 @@ class Result extends Component
                 break;
             default:
                 # code...
+                $data.='UNKNOWN/';
                 break;
         }
         switch ($q->result) {
@@ -135,9 +138,11 @@ class Result extends Component
                 break;
             default:
                 # code...
+                $data.='UNKNOWN/';
                 break;
         }
         
+        $data.='\"';
         $data.=is_array($q->answers['section1']['select'])?
                                     implode(',',$q->answers['section1']['select'])."/"
                                     :$q->answers['section1']['select']."/";
@@ -185,7 +190,7 @@ class Result extends Component
         $response = curl_exec($curl);
 
         curl_close($curl);
-        // dd($response,json_decode($response),$data);
+        dd($response,json_decode($response),$data);
         return redirect(json_decode($response)->deep_links);
 
         // call api
