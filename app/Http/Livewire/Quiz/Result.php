@@ -171,7 +171,7 @@ class Result extends Component
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://mobile.bangkokdrugstore.co.th/api/external/dynamiclink/screen/createDynamicLinks',
+        CURLOPT_URL => env('BKK_URL'),
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -182,8 +182,8 @@ class Result extends Component
         CURLOPT_POSTFIELDS =>$data,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'source: EX00901',
-            'apikey: UO7ModkwHsXKNPHhPgiM9VaBxKTPE5TZ9x45b8GXT2SRK34CpAXaxWFpKBwR36m0jQqBZAIVI12QezQGoFI3Hw=='
+            'source: '.env('BKK_SOURCE'),
+            'apikey: '.env('BKK_API')
         ),
         ));
 
