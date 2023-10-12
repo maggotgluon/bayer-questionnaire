@@ -97,7 +97,7 @@ class Result extends Component
     public function go_bkk(){
         // dd('go bkk drugstore');
         $q = $this->ans;
-        // dd($q,$q->answers,$this->ans);
+        // dd($q,$q->answers);
         $data='{"screen":"chatroom","type":"TR","value":{"message":"';
             // $data="";
         // $data.= "ID".str_pad($q->id, 5,'0',STR_PAD_LEFT)."/n";
@@ -190,6 +190,24 @@ class Result extends Component
         $response = curl_exec($curl);
 
         curl_close($curl);
+
+        $answers = $q->answers;
+        if(isset($answers['click_bkkdrug'])){
+            $answers['click_bkkdrug']++;
+        }else{
+            $answers=array('click_bkkdrug'=>1)+$answers;
+            // array_push($answers,['click_bkkdrug'=>1]);
+        }
+
+        if(isset($answers['bangkokdrugstore'])){
+            // $answers['bangkokdrugstore']=json_decode($response)->deep_links;
+            array_push($answers['bangkokdrugstore'],$response);
+        }else{
+            $answers=array('bangkokdrugstore'=>[$response])+$answers;
+        }
+        $q->answers=$answers;
+        $q->save();
+        // dd($q->answers);
         // dd($response,json_decode($response),$data);
         return redirect(json_decode($response)->deep_links);
 
