@@ -6,10 +6,12 @@ namespace App\Http\Livewire\Quiz;
 use Livewire\Component;
 // use VerumConsilium\Browsershot\Facades\Screenshot;
 use App\Models\Question;
-
+use Illuminate\Support\Facades\Http;
+use WireUi\Traits\Actions;
 
 class Result extends Component
 {
+    use Actions;
     public $path,$result,$age;
     public $ans;
 
@@ -104,8 +106,8 @@ class Result extends Component
         // $data.= "AGE".$q->ages."/n";
         // $data.=$q->created_at."/n";
 
-        $data.='\"';
-        switch ($q->type) {
+        $data.='as';
+        /* switch ($q->type) {
             case '1':
                 # code...
                 $data.='PMDD/';
@@ -163,11 +165,27 @@ class Result extends Component
         $data.="".$q->answers['section_part']['question-4']."(";
         $data.=is_array($q->answers['section_part']['answer-4'])?
                                     implode(',',$q->answers['section_part']['answer-4']).")/"
-                                    :$q->answers['section_part']['answer-4'].")/";
+                                    :$q->answers['section_part']['answer-4'].")/"; */
         // dd($data,$q->answers,$this->ans);
         $data.='","is_register":"N"}}';
         $data=trim(preg_replace('/\s\s+/', ' ', $data));
         // dd($data,json_encode($data));
+        /* $response = Http::withHeaders([
+                'Content-Type'=>'application/json',
+                'source'=>env('BKK_SOURCE'),
+                'apikey'=>env('BKK_API')
+            ])->post(env('BKK_URL'),[
+                $data
+            ]); */
+        /* if($response->successful())
+        {
+            $body = $response->json();
+            dd($data,"yes",$body,env('BKK_SOURCE'),env('BKK_API'),env('BKK_URL'));
+        }
+        else
+        {
+            dd($data,"no",$response,env('BKK_SOURCE'),env('BKK_API'),env('BKK_URL'));
+        } */
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -175,7 +193,7 @@ class Result extends Component
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
+        CURLOPT_TIMEOUT => 300,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
@@ -190,6 +208,7 @@ class Result extends Component
         $response = curl_exec($curl);
 
         curl_close($curl);
+
 
         $answers = $q->answers;
         if(isset($answers['click_bkkdrug'])){
@@ -208,8 +227,16 @@ class Result extends Component
         $q->answers=$answers;
         $q->save();
         // dd($q->answers);
-        // dd($response,json_decode($response),$data);
-        return redirect(json_decode($response)->deep_links);
+        if(isset(json_decode($response)->deep_links)){
+            // dd(json_decode($response)->deep_links);
+            return redirect(json_decode($response)->deep_links);
+        }else{
+            // dd(json_decode($response));
+            $this->notification()->error(
+                $title = 'Error !!!',
+                $description = 'Code'.json_decode($response)->statusCode." : ".json_decode($response)->message
+            );
+        }
 
         // call api
         // readdir to return api call

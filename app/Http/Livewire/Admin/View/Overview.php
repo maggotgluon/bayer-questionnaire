@@ -42,6 +42,7 @@ class Overview extends Component
                 //return Carbon::parse($date->created_at)->format('m'); // grouping by months
             // });
         // dd($activeUser,$from,$to);
+        // $data['click_bkk'];
         $data['count']=$dataset->count()??0;
 
         $data['age']['9']= $dataset->where('ages','<',10)->count();

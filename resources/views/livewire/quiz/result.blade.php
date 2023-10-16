@@ -1,4 +1,5 @@
 <div>
+    <x-notifications />
     <x-quiz-page class="page-{{ $path }} top-0 left-0 animate" id="content">
         <div class="bg-white rounded-3xl drop-shadow-[10px_10px_0_rgba(0,0,0,0.5)] p-8 mx-auto max-w-xs" id='content'>
             <h3 class="text-3xl text-center">{{ $title }}</h3>
