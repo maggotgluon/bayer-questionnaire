@@ -83,13 +83,13 @@
                     onrendered: function(canvas) {
                         var imgData = canvas.toDataURL('image/png').replace("image/png",
                         "image/octet-stream");
-                        console.log('load canvas'+imgData);
+                        console.log('load canvas'+'imgData');
 
                         var a = document.createElement('a');
                         a.href = imgData;
                         a.download = 'result.png';
                         document.body.appendChild(a);
-                        console.log('create element'+a)
+                        console.log('create element'+'a')
                         a.click(); 
                         console.log('click on a to download')
 

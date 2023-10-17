@@ -52,7 +52,10 @@
                 <ul>
                     @foreach($question->answers['bangkokdrugstore'] as $link)
                         
-                        <li>{{$link}}</li>
+                        <li>
+                            {{$link}}
+
+                        </li>
                         
                     @endforeach
                 </ul>
@@ -61,6 +64,23 @@
                 @endif
             @else
             
+            @endisset
+            @isset($question->answers['userAgent'])
+            User Agent:
+                @if(is_array($question->answers['userAgent']))
+                <ul>
+                    @foreach($question->answers['userAgent'] as $link)
+                        
+                        <li>
+                            {{$link}}
+
+                        </li>
+                        
+                    @endforeach
+                </ul>
+                @else
+                    {{$question->answers['userAgent']}}
+                @endif
             @endisset
         @endisset
         <div class="flex gap-4 whitespace-nowrap items-center my-4">

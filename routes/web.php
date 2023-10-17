@@ -73,4 +73,4 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/quiz', client_quiz::class)->name('quiz');
-Route::get('/result/{path}/{result}/{age}', client_result::class)->name('result');
+Route::get('/result/{path}/{result}/{age}/{id}', client_result::class)->name('result');

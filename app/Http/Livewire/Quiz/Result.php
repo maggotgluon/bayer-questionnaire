@@ -106,7 +106,7 @@ class Result extends Component
         // $data.= "AGE".$q->ages."/n";
         // $data.=$q->created_at."/n";
 
-        $data.='as';
+        // $data.='as';
         switch ($q->type) {
             case '1':
                 # code...
