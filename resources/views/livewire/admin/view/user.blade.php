@@ -15,6 +15,7 @@
     </div>
 <div class="grid gap-4 py-2">
     @foreach ($questions as $question)
+    
     @php
 
     switch ($question->result) {
@@ -42,6 +43,21 @@
 
     @endphp
     <div class="bg-white rounded-3xl p-4 drop-shadow-lg">
+        @isset ($question->answers['click_bkkdrug'])
+            click Bangkok drug : {{$question->answers['click_bkkdrug']}}<br>
+            @isset($question->answers['bkk_link'])
+            link:
+                @if(is_array($question->answers['bkk_link']))
+                    @foreach($question->answers['bkk_link'] as $link)
+                        {{$link}}
+                    @endforeach
+                @else
+                    {{$question->answers['bkk_link']}}
+                @endif
+            @else
+            
+            @endisset
+        @endisset
         <div class="flex gap-4 whitespace-nowrap items-center my-4">
             <span class="rounded-full {{ $result_color }} w-10 h-10 aspect-square inline-block"></span>
             <span class="text-xl font-medium">ID: {{ str_pad($question->id, 5,'0',STR_PAD_LEFT) }}</span>
@@ -66,22 +82,26 @@
             <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
                 @isset($question->answers['section_part']['question-1'])
                     <h5 class="font-medium">{{ $question->answers['section_part']['question-1'] }}</h5>
+                    @isset($question->answers['section_part']['answer-1'])
                     <ul>
                     @foreach ($question->answers['section_part']['answer-1'] as $ans)
                         <li>{{ $ans }}</li>
                     @endforeach
                     </ul>
+                    @endisset
                 @endisset
 
             </div>
             <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">
                 @isset($question->answers['section_part']['question-2'])
                     <h5 class="font-medium">{{ $question->answers['section_part']['question-2'] }}</h5>
+                    @isset($question->answers['section_part']['answer-1'])
                     <ul>
                     @foreach ($question->answers['section_part']['answer-2'] as $ans)
                         <li>{{ $ans }}</li>
                     @endforeach
                     </ul>
+                    @endisset
                 @endisset
              </div>
             <div class="bg-zinc-100/40 rounded-lg p-2 text-center md:min-h-[150px]">

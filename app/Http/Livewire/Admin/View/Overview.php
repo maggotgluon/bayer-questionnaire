@@ -30,6 +30,7 @@ class Overview extends Component
         $this->fb_shared = $this->curl_get_shares(route('home')); 
         $c='#4237C5';
         $dataset = Question::all();
+        
         $to = date(Carbon::now());
         $from = date(Carbon::now()->subDays(30));
         $activeUser = Question::select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as views'))
@@ -44,7 +45,17 @@ class Overview extends Component
         // dd($activeUser,$from,$to);
         // $data['click_bkk'];
         $data['count']=$dataset->count()??0;
-
+        // dd($dataset[1]->answers['click_bkkdrug'],$dataset[1]->answers['bangkokdrugstore']);
+        $data['bkk']=0;
+        $data['bkk_link']=[];
+        foreach ($dataset as $key => $d) {
+            if(isset($d->answers['click_bkkdrug'])){
+                $data['bkk']+=1;
+                $data['bkk_link']+$d->answers['bangkokdrugstore'];
+            }
+            # code...
+        }
+        // dd($data['bkk'],$data['bkk_link']);
         $data['age']['9']= $dataset->where('ages','<',10)->count();
         $data['age']['10-20']= $dataset->whereBetween('ages',[10,20])->count();
         $data['age']['21-30']= $dataset->whereBetween('ages',[21,30])->count();
