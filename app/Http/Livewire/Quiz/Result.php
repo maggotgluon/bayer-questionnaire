@@ -211,7 +211,7 @@ class Result extends Component
 
 
         $answers = $q->answers;
-        // dd(request()->userAgent());
+        // dd(request(),request()->userAgent());
         if(isset($answers['click_bkkdrug'])){
             $answers['click_bkkdrug']++;
         }else{
@@ -225,7 +225,9 @@ class Result extends Component
         }else{
             $answers=array('bangkokdrugstore'=>[$response])+$answers;
         }
+        $answers=array('userAgent'=>[request()->userAgent()])+$answers;
         $q->answers=$answers;
+        // dd($q->answers);
         $q->save();
         // dd($q->answers);
         if(isset(json_decode($response)->deep_links)){
