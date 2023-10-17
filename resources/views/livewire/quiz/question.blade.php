@@ -18,16 +18,16 @@
         <livewire:quiz.result :path='3' :result='3' :age='33' /> --}}
         @switch($step)
         @case('0')    
-        <livewire:quiz.section.path0/>
+        <livewire:quiz.section.path0 class="section" id="path0"/>
         @break
         @case('1')
-        <livewire:quiz.section.path1/>
+        <livewire:quiz.section.path1 class="section" id="path1"/>
         @break
         @case('2')
-        <livewire:quiz.section.path2/>
+        <livewire:quiz.section.path2 class="section" id="path2"/>
         @break
         @case('3')
-        <livewire:quiz.section.path3/>
+        <livewire:quiz.section.path3 class="section" id="path3"/>
         @break
         @case('result')
             

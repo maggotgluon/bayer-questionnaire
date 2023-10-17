@@ -45,14 +45,19 @@
     <div class="bg-white rounded-3xl p-4 drop-shadow-lg">
         @isset ($question->answers['click_bkkdrug'])
             click Bangkok drug : {{$question->answers['click_bkkdrug']}}<br>
-            @isset($question->answers['bkk_link'])
-            link:
-                @if(is_array($question->answers['bkk_link']))
-                    @foreach($question->answers['bkk_link'] as $link)
-                        {{$link}}
+            {{-- {{dd($question->answers)}} --}}
+            @isset($question->answers['bangkokdrugstore'])
+            respond:
+                @if(is_array($question->answers['bangkokdrugstore']))
+                <ul>
+                    @foreach($question->answers['bangkokdrugstore'] as $link)
+                        
+                        <li>{{$link}}</li>
+                        
                     @endforeach
+                </ul>
                 @else
-                    {{$question->answers['bkk_link']}}
+                    {{$question->answers['bangkokdrugstore']}}
                 @endif
             @else
             

@@ -3,9 +3,9 @@
         <div class="col-span-3 h-min ">
             
         </div>
-        <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white opacity-0">
-            <span>F</span>
-            <span>{{$fb_shared}} share</span>
+        <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white">
+            <span>Bangkok Drug Store</span>
+            <span>{{$data['bkk']}} Users / {{$data['bkk_total']}} Clicks</span>
         </div>
         <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white">
             <span>F</span>

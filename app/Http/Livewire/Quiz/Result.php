@@ -107,7 +107,7 @@ class Result extends Component
         // $data.=$q->created_at."/n";
 
         $data.='as';
-        /* switch ($q->type) {
+        switch ($q->type) {
             case '1':
                 # code...
                 $data.='PMDD/';
@@ -165,19 +165,19 @@ class Result extends Component
         $data.="".$q->answers['section_part']['question-4']."(";
         $data.=is_array($q->answers['section_part']['answer-4'])?
                                     implode(',',$q->answers['section_part']['answer-4']).")/"
-                                    :$q->answers['section_part']['answer-4'].")/"; */
+                                    :$q->answers['section_part']['answer-4'].")/";
         // dd($data,$q->answers,$this->ans);
         $data.='","is_register":"N"}}';
         $data=trim(preg_replace('/\s\s+/', ' ', $data));
         // dd($data,json_encode($data));
-        /* $response = Http::withHeaders([
+        $response = Http::withHeaders([
                 'Content-Type'=>'application/json',
                 'source'=>env('BKK_SOURCE'),
                 'apikey'=>env('BKK_API')
             ])->post(env('BKK_URL'),[
                 $data
-            ]); */
-        /* if($response->successful())
+            ]);
+        if($response->successful())
         {
             $body = $response->json();
             dd($data,"yes",$body,env('BKK_SOURCE'),env('BKK_API'),env('BKK_URL'));
@@ -185,7 +185,7 @@ class Result extends Component
         else
         {
             dd($data,"no",$response,env('BKK_SOURCE'),env('BKK_API'),env('BKK_URL'));
-        } */
+        }
         $curl = curl_init();
 
         curl_setopt_array($curl, array(

@@ -7,6 +7,7 @@ use Asantibanez\LivewireCharts\Facades\LivewireCharts;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Illuminate\Support\Facades\Http;
 
 class Overview extends Component
 {
@@ -23,11 +24,19 @@ class Overview extends Component
         $json_return = curl_exec( $fb_connect ); // connect and get json data
         curl_close( $fb_connect ); // close connection
         $body = json_decode( $json_return );
-        return intval( $body->engagement->share_count );
+        $response = Http::get($api_url);
+        if($response->successful()){
+            dd($response);
+            return intval( $body->engagement->share_count );
+        }else{
+            return 'error ststus : '.$response->status();
+        }
+    }
+    public function mount(){
+        $this->fb_shared = $this->curl_get_shares(route('home')); 
     }
     public function render()
     {
-        $this->fb_shared = $this->curl_get_shares(route('home')); 
         $c='#4237C5';
         $dataset = Question::all();
         
@@ -47,15 +56,18 @@ class Overview extends Component
         $data['count']=$dataset->count()??0;
         // dd($dataset[1]->answers['click_bkkdrug'],$dataset[1]->answers['bangkokdrugstore']);
         $data['bkk']=0;
+        $data['bkk_total']=0;
         $data['bkk_link']=[];
         foreach ($dataset as $key => $d) {
             if(isset($d->answers['click_bkkdrug'])){
                 $data['bkk']+=1;
-                $data['bkk_link']+$d->answers['bangkokdrugstore'];
+                $data['bkk_total']+=$d->answers['click_bkkdrug'];
+                // dd($d);
+                array_push($data['bkk_link'],$d->answers['bangkokdrugstore']);
             }
             # code...
         }
-        // dd($data['bkk'],$data['bkk_link']);
+        // dd($data['bkk'],$data['bkk_total']);
         $data['age']['9']= $dataset->where('ages','<',10)->count();
         $data['age']['10-20']= $dataset->whereBetween('ages',[10,20])->count();
         $data['age']['21-30']= $dataset->whereBetween('ages',[21,30])->count();
