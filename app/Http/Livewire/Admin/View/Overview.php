@@ -26,7 +26,7 @@ class Overview extends Component
         $body = json_decode( $json_return );
         $response = Http::get($api_url);
         if($response->successful()){
-            dd($response->json()->engagement->share_count);
+            dd($response->json());
             return intval( $body->engagement->share_count );
         }else{
             return 'error ststus : '.$response->status();
