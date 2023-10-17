@@ -170,7 +170,7 @@ class Result extends Component
         $data.='","is_register":"N"}}';
         $data=trim(preg_replace('/\s\s+/', ' ', $data));
         // dd($data,json_encode($data));
-        $response = Http::withHeaders([
+        /* $response = Http::withHeaders([
                 'Content-Type'=>'application/json',
                 'source'=>env('BKK_SOURCE'),
                 'apikey'=>env('BKK_API')
@@ -185,7 +185,7 @@ class Result extends Component
         else
         {
             dd($data,"no",$response,env('BKK_SOURCE'),env('BKK_API'),env('BKK_URL'));
-        }
+        } */
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -211,6 +211,7 @@ class Result extends Component
 
 
         $answers = $q->answers;
+        // dd(request()->userAgent());
         if(isset($answers['click_bkkdrug'])){
             $answers['click_bkkdrug']++;
         }else{
