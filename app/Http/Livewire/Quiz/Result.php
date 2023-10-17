@@ -15,7 +15,7 @@ class Result extends Component
     public $path,$result,$age;
     public $ans;
 
-    public $title,$images,$content, $image_face,$lottie,$idkey;
+    public $title,$images,$content, $image_face,$lottie,$idkey,$idc;
     protected $queryString = ['id'];
     public function mount(){
         $content['1']['1']['title']='สาวสมดุล';
@@ -83,7 +83,7 @@ class Result extends Component
 
         $path = $this->path;
         $result = $this->result;
-        $this->ans = Question::find($this->id);
+        $this->ans = Question::find($this->idc);
         // dd($data->answers,$data);
         // dd($path,gettype($path),$result,gettype($result));
         $this->idkey = 'key'.$path.'-'.$result;

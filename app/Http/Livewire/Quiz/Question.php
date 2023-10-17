@@ -38,7 +38,7 @@ class Question extends Component
             
             redirect()->route('result',[
                 // 'data'=>$this->data,
-                'id'=>$this->result->id,
+                'idc'=>$this->result->id,
                 'path'=>$this->data['section1']['path'],
                 'result'=>$this->data['section_part']['result'],
                 'age'=>$this->data['section1']['age']
