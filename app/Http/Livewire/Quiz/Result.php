@@ -95,7 +95,9 @@ class Result extends Component
 
         $this->image_face = 'images/result_'.$result.'.png';
     }
-
+    public function go_boots(){
+        dd('pending end point');
+    }
     public function go_bkk(){
         // dd('go bkk drugstore');
         $q = $this->ans;
