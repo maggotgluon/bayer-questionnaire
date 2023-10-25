@@ -97,6 +97,97 @@ class Result extends Component
     }
     public function go_boots(){
         dd('pending end point');
+        $q = $this->ans;
+        $data='{"screen":"chatroom","type":"TR","value":{"message":"';
+            switch ($q->type) {
+                case '1':
+                    $data.='PMDD/';
+                    break;
+                case '2':
+                    $data.='สิวฮอร์โมน/';
+                    break;
+                case '3':
+                    $data.='PCOS/';
+                    break;
+                default:
+                    $data.='UNKNOWN/';
+                    break;
+            }
+            switch ($q->result) {
+                case '1':
+                    $data.='Normal ยังสบาย หายห่วง';
+                    break;
+                case '2':
+                    $data.='Moderate ปรึกษาแพทย์/เภสัช หน่อยน๊า';
+                    break;
+                case '3':
+                    $data.='Severe ปรึกษาแพทย์/เภสัชด่วนจ้า';
+                    break;
+                default:
+                    $data.='UNKNOWN';
+                    break;
+            }
+            
+            $data.='/\"';
+            $data.=is_array($q->answers['section1']['select'])?
+                                        implode(',',$q->answers['section1']['select'])."/"
+                                        :$q->answers['section1']['select']."/";
+            $data.="".$q->answers['section_part']['question-1']."(";
+            $data.=is_array($q->answers['section_part']['answer-1'])?
+                                        implode(',',$q->answers['section_part']['answer-1']).")/"
+                                        :$q->answers['section_part']['answer-1'].")/";
+            $data.="".$q->answers['section_part']['question-2']."(";
+            $data.=is_array($q->answers['section_part']['answer-2'])?
+                                        implode(',',$q->answers['section_part']['answer-2']).")/"
+                                        :$q->answers['section_part']['answer-2'].")/";
+            if(isset($q->answers['section_part']['question-3'])){
+                $data.="".$q->answers['section_part']['question-3']."(";
+                $data.=is_array($q->answers['section_part']['answer-3'])?
+                                        implode(',',$q->answers['section_part']['answer-3']).")/"
+                                        :$q->answers['section_part']['answer-3'].")/";
+            }
+            $data.="".$q->answers['section_part']['question-4']."(";
+            $data.=is_array($q->answers['section_part']['answer-4'])?
+                                        implode(',',$q->answers['section_part']['answer-4']).")/"
+                                        :$q->answers['section_part']['answer-4'].")/";
+            // dd($data,$q->answers,$this->ans);
+            $data.='","is_register":"N"}}';
+            $data=trim(preg_replace('/\s\s+/', ' ', $data));
+
+            // api call
+
+            $response = "api response";
+            // end api call
+            $answers = $q->answers;
+            
+            if(isset($answers['click_boots'])){
+                $answers['click_boots']++;
+            }else{
+                $answers=array('click_boots'=>1)+$answers;
+            }
+
+            if(isset($answers['boots'])){
+                // $answers['bangkokdrugstore']=json_decode($response)->deep_links;
+                array_push($answers['boots'],$response);
+            }else{
+                $answers=array('boots'=>[$response])+$answers;
+            }
+            $answers=array('userAgent'=>[request()->userAgent()])+$answers;
+            $q->answers=$answers;
+            // dd($q->answers);
+            $q->save();
+            // dd($q->answers);
+            if(isset(json_decode($response)->deep_links)){
+                // dd(json_decode($response)->deep_links);
+                return redirect(json_decode($response)->deep_links);
+            }else{
+                // dd(json_decode($response));
+                $this->notification()->error(
+                    $title = 'Error !!!',
+                    $description = 'Code'.json_decode($response)->statusCode." : ".json_decode($response)->message
+                );
+            }
+
     }
     public function go_bkk(){
         // dd('go bkk drugstore');
