@@ -45,43 +45,7 @@
     <div class="bg-white rounded-3xl p-4 drop-shadow-lg">
         @isset ($question->answers['click_bkkdrug'])
             click Bangkok drug : {{$question->answers['click_bkkdrug']}}<br>
-            {{-- {{dd($question->answers)}} --}}
-            @isset($question->answers['bangkokdrugstore'])
-            respond:
-                @if(is_array($question->answers['bangkokdrugstore']))
-                <ul>
-                    @foreach($question->answers['bangkokdrugstore'] as $link)
-                        
-                        <li>
-                            {{$link}}
-
-                        </li>
-                        
-                    @endforeach
-                </ul>
-                @else
-                    {{$question->answers['bangkokdrugstore']}}
-                @endif
-            @else
             
-            @endisset
-            @isset($question->answers['userAgent'])
-            User Agent:
-                @if(is_array($question->answers['userAgent']))
-                <ul>
-                    @foreach($question->answers['userAgent'] as $link)
-                        
-                        <li>
-                            {{$link}}
-
-                        </li>
-                        
-                    @endforeach
-                </ul>
-                @else
-                    {{$question->answers['userAgent']}}
-                @endif
-            @endisset
         @endisset
         <div class="flex gap-4 whitespace-nowrap items-center my-4">
             <span class="rounded-full {{ $result_color }} w-10 h-10 aspect-square inline-block"></span>

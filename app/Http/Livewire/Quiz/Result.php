@@ -100,115 +100,7 @@ class Result extends Component
         // dd('go bkk drugstore');
         $q = $this->ans;
         // dd($q,$q->answers);
-        $data='{"screen":"chatroom","type":"TR","value":{"message":"';
-            // $data="";
-        // $data.= "ID".str_pad($q->id, 5,'0',STR_PAD_LEFT)."/n";
-        // $data.= "AGE".$q->ages."/n";
-        // $data.=$q->created_at."/n";
-
-        // $data.='as';
-        switch ($q->type) {
-            case '1':
-                # code...
-                $data.='PMDD/';
-                break;
-            case '2':
-                # code...
-                $data.='สิวฮอร์โมน/';
-                break;
-            case '3':
-                # code...
-                $data.='PCOS/';
-                break;
-            default:
-                # code...
-                $data.='UNKNOWN/';
-                break;
-        }
-        switch ($q->result) {
-            case '1':
-                # code...
-                $data.='Normal ยังสบาย หายห่วง';
-                break;
-            case '2':
-                # code...
-                $data.='Moderate ปรึกษาแพทย์/เภสัช หน่อยน๊า';
-                break;
-            case '3':
-                # code...
-                $data.='Severe ปรึกษาแพทย์/เภสัชด่วนจ้า';
-                break;
-            default:
-                # code...
-                $data.='UNKNOWN';
-                break;
-        }
         
-        $data.='/\"';
-        $data.=is_array($q->answers['section1']['select'])?
-                                    implode(',',$q->answers['section1']['select'])."/"
-                                    :$q->answers['section1']['select']."/";
-        $data.="".$q->answers['section_part']['question-1']."(";
-        $data.=is_array($q->answers['section_part']['answer-1'])?
-                                    implode(',',$q->answers['section_part']['answer-1']).")/"
-                                    :$q->answers['section_part']['answer-1'].")/";
-        $data.="".$q->answers['section_part']['question-2']."(";
-        $data.=is_array($q->answers['section_part']['answer-2'])?
-                                    implode(',',$q->answers['section_part']['answer-2']).")/"
-                                    :$q->answers['section_part']['answer-2'].")/";
-        if(isset($q->answers['section_part']['question-3'])){
-            $data.="".$q->answers['section_part']['question-3']."(";
-            $data.=is_array($q->answers['section_part']['answer-3'])?
-                                    implode(',',$q->answers['section_part']['answer-3']).")/"
-                                    :$q->answers['section_part']['answer-3'].")/";
-        }
-        $data.="".$q->answers['section_part']['question-4']."(";
-        $data.=is_array($q->answers['section_part']['answer-4'])?
-                                    implode(',',$q->answers['section_part']['answer-4']).")/"
-                                    :$q->answers['section_part']['answer-4'].")/";
-        // dd($data,$q->answers,$this->ans);
-        $data.='","is_register":"N"}}';
-        $data=trim(preg_replace('/\s\s+/', ' ', $data));
-        // dd($data,json_encode($data));
-        /* $response = Http::withHeaders([
-                'Content-Type'=>'application/json',
-                'source'=>env('BKK_SOURCE'),
-                'apikey'=>env('BKK_API')
-            ])->post(env('BKK_URL'),[
-                $data
-            ]);
-        if($response->successful())
-        {
-            $body = $response->json();
-            dd($data,"yes",$body,env('BKK_SOURCE'),env('BKK_API'),env('BKK_URL'));
-        }
-        else
-        {
-            dd($data,"no",$response,env('BKK_SOURCE'),env('BKK_API'),env('BKK_URL'));
-        } */
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => env('BKK_URL'),
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 300,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>$data,
-        CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/json',
-            'source: '.env('BKK_SOURCE'),
-            'apikey: '.env('BKK_API')
-        ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-
 
         $answers = $q->answers;
         // dd(request(),request()->userAgent());
@@ -219,30 +111,11 @@ class Result extends Component
             // array_push($answers,['click_bkkdrug'=>1]);
         }
 
-        if(isset($answers['bangkokdrugstore'])){
-            // $answers['bangkokdrugstore']=json_decode($response)->deep_links;
-            array_push($answers['bangkokdrugstore'],$response);
-        }else{
-            $answers=array('bangkokdrugstore'=>[$response])+$answers;
-        }
-        $answers=array('userAgent'=>[request()->userAgent()])+$answers;
         $q->answers=$answers;
         // dd($q->answers);
         $q->save();
         // dd($q->answers);
-        if(isset(json_decode($response)->deep_links)){
-            // dd(json_decode($response)->deep_links);
-            return redirect(json_decode($response)->deep_links);
-        }else{
-            // dd(json_decode($response));
-            $this->notification()->error(
-                $title = 'Error !!!',
-                $description = 'Code'.json_decode($response)->statusCode." : ".json_decode($response)->message
-            );
-        }
-
-        // call api
-        // readdir to return api call
+        return redirect('https://bit.ly/3LE2mlG');
     }
     public function screenshot2(){
         // dd(response()->download('images/result/Result-'.$this->path.'-'.$this->result.'.png'));
