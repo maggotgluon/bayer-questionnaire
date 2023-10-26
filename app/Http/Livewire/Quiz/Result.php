@@ -96,9 +96,9 @@ class Result extends Component
         $this->image_face = 'images/result_'.$result.'.png';
     }
     public function go_boots(){
-        dd('pending end point');
+        // dd('pending end point');
         $q = $this->ans;
-        $data='{"screen":"chatroom","type":"TR","value":{"message":"';
+        /* $data='{"screen":"chatroom","type":"TR","value":{"message":"';
             switch ($q->type) {
                 case '1':
                     $data.='PMDD/';
@@ -156,7 +156,7 @@ class Result extends Component
 
             // api call
 
-            $response = "api response";
+            $response = "api response"; */
             // end api call
             $answers = $q->answers;
             
@@ -166,27 +166,27 @@ class Result extends Component
                 $answers=array('click_boots'=>1)+$answers;
             }
 
-            if(isset($answers['boots'])){
-                // $answers['bangkokdrugstore']=json_decode($response)->deep_links;
-                array_push($answers['boots'],$response);
-            }else{
-                $answers=array('boots'=>[$response])+$answers;
-            }
-            $answers=array('userAgent'=>[request()->userAgent()])+$answers;
+            // if(isset($answers['boots'])){
+            //     // $answers['bangkokdrugstore']=json_decode($response)->deep_links;
+            //     array_push($answers['boots'],$response);
+            // }else{
+            //     $answers=array('boots'=>[$response])+$answers;
+            // }
+            // $answers=array('userAgent'=>[request()->userAgent()])+$answers;
             $q->answers=$answers;
             // dd($q->answers);
             $q->save();
             // dd($q->answers);
-            if(isset(json_decode($response)->deep_links)){
+            return redirect('https://universal.brtmobile.com/news_talktopharmacist');
+            /* if(isset(json_decode($response)->deep_links)){
                 // dd(json_decode($response)->deep_links);
-                return redirect(json_decode($response)->deep_links);
             }else{
                 // dd(json_decode($response));
                 $this->notification()->error(
                     $title = 'Error !!!',
                     $description = 'Code'.json_decode($response)->statusCode." : ".json_decode($response)->message
                 );
-            }
+            } */
 
     }
     public function go_bkk(){

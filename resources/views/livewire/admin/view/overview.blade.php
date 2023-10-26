@@ -4,7 +4,7 @@
             
         </div>
         <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white">
-            <span>Bangkok Drug Store</span>
+            <span>Boots </span>
             <span>{{$data['bkk']}} Users / {{$data['bkk_total']}} Clicks</span>
         </div>
         <div class="col-span-2 h-min flex justify-between  rounded-xl bg-blue-500 px-4 py-2 text-white">

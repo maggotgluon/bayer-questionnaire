@@ -59,9 +59,9 @@ class Overview extends Component
         $data['bkk_total']=0;
         $data['bkk_link']=[];
         foreach ($dataset as $key => $d) {
-            if(isset($d->answers['click_bkkdrug'])){
+            if(isset($d->answers['click_boots'])){
                 $data['bkk']+=1;
-                $data['bkk_total']+=$d->answers['click_bkkdrug'];
+                $data['bkk_total']+=$d->answers['click_boots'];
                 // dd($d);
                 array_push($data['bkk_link'],$d->answers['bangkokdrugstore']);
             }
