@@ -46,7 +46,7 @@
                 
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
                     wire:click="screenshot2"><span>
-                        <x-icon name="save" class="w-8 inline-block" />บันทึกรูป เพื่อปรึกษาเภสัชกร
+                        <x-icon name="save" class="w-8 inline-block" />บันทึกรูป<br> เพื่อปรึกษาเภสัชกร
                     </span></a>
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer"
                     rel="nofollow noopener noreferrer"
