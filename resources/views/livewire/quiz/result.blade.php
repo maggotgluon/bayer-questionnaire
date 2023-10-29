@@ -37,6 +37,11 @@
         <x-slot:footer>
             <div class="w-full flex flex-col">
             <div class="grid w-3/5 m-auto mt-2">
+                
+                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
+                    wire:click="screenshot2"><span>
+                        <x-icon name="save" class="w-8 inline-block" />Save Photo
+                    </span></a>
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer"
                    rel="nofollow noopener noreferrer"
                    target="_blank"
