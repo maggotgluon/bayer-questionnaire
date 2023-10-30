@@ -36,12 +36,8 @@
 
         <x-slot:footer>
             <div class="w-full flex flex-col">
+            
             <div class="grid w-3/5 m-auto mt-2">
-                
-                <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
-                    wire:click="screenshot2"><span>
-                        <x-icon name="save" class="w-8 inline-block" />Save Photo
-                    </span></a>
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer"
                    rel="nofollow noopener noreferrer"
                    target="_blank"
@@ -56,12 +52,13 @@
                     </span></a>
 
             </div>
-            </div>
-            <div class="grid w-4/5 m-auto mt-8">
+            
+            <div class="grid w-4/5 m-auto mt-2">
                 <a class="cursor-pointer transition-all duration-500 ease-out hover:scale-110 hover:drop-shadow-md"
-                   wire:click="go_boots">
+                    wire:click="go_boots">
                     <img class="" src="{{asset('btn_boots.png')}}" alt="">
                 </a>
+            </div>
             </div>
         </x-slot:footer>
     </x-quiz-page>
