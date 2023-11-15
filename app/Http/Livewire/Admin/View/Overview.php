@@ -63,7 +63,7 @@ class Overview extends Component
                 $data['bkk']+=1;
                 $data['bkk_total']+=$d->answers['click_bkkdrug'];
                 // dd($d);
-                array_push($data['bkk_link'],$d->answers['bangkokdrugstore']);
+                // array_push($data['bkk_link'],$d->answers['bangkokdrugstore']);
             }
             # code...
         }

@@ -38,7 +38,9 @@
             <div class="grid w-3/5 m-auto">
 
                 <a class="btn-ans p-4 text-center text-xl whitespace-nowrap min-w-max cursor-pointer" 
-                wire:click="go_bkk"><span>
+                {{-- wire:click="go_bkk" --}}
+                href="https://bit.ly/3LE2mlG" target="_blank"
+                ><span>
                     ปรึกษาผู้เชี่ยวชาญ<br> ผ่านร้านยากรุงเทพ
                 </span></a>
                 
