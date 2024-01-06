@@ -73,7 +73,7 @@ class Sidebar extends Component
                 // dd($q,$row);
                 
 
-                fputcsv($file, array($row['id'], $row['age'], $row['type'], $row['result'], $row['score'], $row['answer'], $row['answer-1'], $row['answer-2'], $row['answer-3'],$row['answer-4'],$row['created_at']));
+                fputcsv($file, array($row['id'], $row['age'], $row['type'], $row['result'], $row['score'], $row['answer'], $row['answer-1'], $row['answer-2'], $row['answer-3'],$row['answer-4'],$row['click'],$row['created_at']));
             }
 
             fclose($file);
