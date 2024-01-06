@@ -67,7 +67,7 @@ class Sidebar extends Component
                 $row['answer-4']  = isset($q->answers['section_part']['answer-4'])?implode(',',$q->answers['section_part']['answer-4']):"-";
                 
 
-                $row['click'] = isset($qa->answers['click_boots'])?1:0;
+                $row['click'] = isset($q->answers['click_boots'])?1:0;
 
                 $row['created_at']  = $q->created_at??"-";
                 // dd($q,$row);
