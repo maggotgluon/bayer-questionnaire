@@ -22,7 +22,7 @@ class Sidebar extends Component
             "Expires"             => "0"
         );
 
-        $columns = array('id', 'age', 'type', 'result', 'score','answer','answer-1','answer-2','answer-3','answer-4', 'create at');
+        $columns = array('id', 'age', 'type', 'result', 'score','answer','answer-1','answer-2','answer-3','answer-4', 'create at','click');
 
         $callback = function() use($qa, $columns) {
             $file = fopen('php://output', 'w');
@@ -65,11 +65,14 @@ class Sidebar extends Component
                 $row['answer-2']  = isset($q->answers['section_part']['answer-2'])?implode(',',$q->answers['section_part']['answer-2']):"-";
                 $row['answer-3']  = isset($q->answers['section_part']['answer-3'])?implode(',',$q->answers['section_part']['answer-3']):"-";
                 $row['answer-4']  = isset($q->answers['section_part']['answer-4'])?implode(',',$q->answers['section_part']['answer-4']):"-";
+
+                $row['click']  = isset($q->answers['click_bkkdrug'])?1:0;
+
                 $row['created_at']  = $q->created_at??"-";
                 // dd($q,$row);
                 
 
-                fputcsv($file, array($row['id'], $row['age'], $row['type'], $row['result'], $row['score'], $row['answer'], $row['answer-1'], $row['answer-2'], $row['answer-3'],$row['answer-4'],$row['created_at']));
+                fputcsv($file, array($row['id'], $row['age'], $row['type'], $row['result'], $row['score'], $row['answer'], $row['answer-1'], $row['answer-2'], $row['answer-3'],$row['answer-4'],$row['created_at'],$row['click']));
             }
 
             fclose($file);
