@@ -177,7 +177,7 @@ class Result extends Component
             // dd($q->answers);
             $q->save();
             // dd($q->answers);
-            return redirect('https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Funiversal.brtmobile.com%2FpharmacistConsult&data=05%7C01%7C%7Cee1dff0ecc7f43e41b7808dbeb75f868%7Cfcb2b37b5da0466b9b830014b67a7c78%7C0%7C0%7C638362664170668425%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=CEGQM%2BeEwOv%2BKTTkefU0p5wDhvxDxeD5yALo5%2FxV7zY%3D&reserved=0');
+            return redirect('https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Funiversal.brtmobile.com%2Fnews_talktopharmacist&data=05%7C01%7C%7Cee1dff0ecc7f43e41b7808dbeb75f868%7Cfcb2b37b5da0466b9b830014b67a7c78%7C0%7C0%7C638362664170668425%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=ATF9X5bDMvNrK3i0428mN3KIHcDhLySGgwV0BPP8mdI%3D&reserved=0');
             // return redirect('https://universal.brtmobile.com/news_talktopharmacist');
             /* if(isset(json_decode($response)->deep_links)){
                 // dd(json_decode($response)->deep_links);
